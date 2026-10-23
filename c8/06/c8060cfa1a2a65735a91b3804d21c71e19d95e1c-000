@@ -1,0 +1,562 @@
+[
+ {
+  "set": "G1",
+  "original": "Quels sont les polices du trio utilisées sur la page landing de ZenRayProgress ?",
+  "query": "Quelles polices de caractères composent le trio utilisé sur la page d'accueil de ZenRayProgress ?",
+  "ref": "rules/Toolbox1.md",
+  "proof": "Sans (Inter Regular 400), Serif (AnthropicSerif 350), chiffres (AnthropicSerif Regular 400), Mono (AnthropicMono)"
+ },
+ {
+  "set": "G1",
+  "original": "Quelle durée doit avoir le périmètre du jeu selon la stratégie ?",
+  "query": "Quelle doit être la durée du périmètre du jeu d'après la stratégie ?",
+  "ref": "Memory1/Business/2026-09-23-plan-d-attaque/05-STRATEGIE-4-ANS.md",
+  "proof": "Un périmètre qu'une personne et ses agents finissent en 12 à 18 mois"
+ },
+ {
+  "set": "G1",
+  "original": "Quel format donner aux pages du calendrier quotidien dans Notion ?",
+  "query": "Quel format faut-il donner aux pages du calendrier quotidien dans Notion ?",
+  "ref": "Memory1/Identity/Matthieu1.md",
+  "proof": "pour un tri chronologique parfait."
+ },
+ {
+  "set": "G1",
+  "original": "Qui paie le loyer de Matthieu et pourquoi veut-il changer cela ?",
+  "query": "Qui règle le loyer de Matthieu, et pourquoi souhaite-t-il modifier cette situation ?",
+  "ref": "Memory1/Identity/Matthieu1.md",
+  "proof": "Loyer 600€/mois payé par sa mère (dépendance qu'il veut rompre)."
+ },
+ {
+  "set": "G1",
+  "original": "Le thé vert empêche-t-il l’absorption du fer ?",
+  "query": "Le thé vert empêche-t-il l'absorption du fer ?",
+  "ref": "Memory1/HealthSport/HealthSport1.md",
+  "proof": "Les polyphénols peuvent réduire le fer non héminique lorsqu’ils sont consommés avec le repas."
+ },
+ {
+  "set": "G1",
+  "original": "Peut-on réactiver les anciens jobs de sync ?",
+  "query": "Est-il possible de réactiver les anciens jobs de synchronisation ?",
+  "ref": "rules/Toolbox1.md",
+  "proof": "NE PAS les réactiver : c'est eux qui ont gonflé `.claude/.git` à 27 Go (bombe RAM)."
+ },
+ {
+  "set": "G1",
+  "original": "Quelles pistes vérifier en cas de fatigue ?",
+  "query": "Quelles pistes faut-il vérifier en cas de fatigue ?",
+  "ref": "Memory1/HealthSport/HealthSport1.md",
+  "proof": "fer/B12/vitamine D si contexte ;"
+ },
+ {
+  "set": "G1",
+  "original": "Comment dit-on « puis-je faire ... ? » en japonais avec la permission ?",
+  "query": "Comment dit-on « puis-je faire... ? » en japonais pour demander la permission ?",
+  "ref": "Memory1/Japanese/Japanese1.md",
+  "proof": "[て形] + もいいですか | Puis-je... ? | すわってもいいですか"
+ },
+ {
+  "set": "G1",
+  "original": "Quel est l'emplacement du projet FreelanceDashboard ?",
+  "query": "Où se trouve le projet FreelanceDashboard ?",
+  "ref": "Memory1/Identity/Matthieu1.md",
+  "proof": "/Users/zenray/Create/Build/Productions/FreelanceDashboard"
+ },
+ {
+  "set": "G1",
+  "original": "Comment former ~ないでください et ~なければなりません ?",
+  "query": "Comment conjuguer ~ないでください et ~なければなりません ?",
+  "ref": "Memory1/Japanese/Japanese1.md",
+  "proof": "| ~ないでください | ない形 + でください | interdiction polie |"
+ },
+ {
+  "set": "G1",
+  "original": "Faut-il attendre la confirmation de Matthieu avant d'écrire dans Japanese1.md ?",
+  "query": "Doit-on attendre la validation de Matthieu avant d'écrire dans Japanese1.md ?",
+  "ref": "Memory1/Identity/Matthieu1.md",
+  "proof": "attends la confirmation humaine"
+ },
+ {
+  "set": "G1",
+  "original": "Quelle partie de Street1 faut-il drill en premier ?",
+  "query": "Par quelle partie de Street1 faut-il commencer le drill ?",
+  "ref": "Memory1/Japanese/Japanese1.md",
+  "proof": "Priorité de drill recommandée : Street1 G1-G2 (てる/とく/ちゃう + って) = la clé qui débloque la compréhension de tout le reste."
+ },
+ {
+  "set": "G1",
+  "original": "Que faire des rencontres qui augmentent la puissance d'agir de Matthieu ?",
+  "query": "Comment gérer les rencontres qui renforcent la capacité d'action de Matthieu ?",
+  "ref": "Memory1/Identity/Matthieu1.md",
+  "proof": "Et ensuite, organiser sa journée pour leur faire place."
+ },
+ {
+  "set": "G1",
+  "original": "Où était prévu le dépôt PVT dans le calendrier du 2 juillet 2026 ?",
+  "query": "À quel endroit était prévu le dépôt PVT dans le calendrier du 2 juillet 2026 ?",
+  "ref": "Memory1/Business/2026-09-23-plan-d-attaque/00-INDEX-DES-PLANS.md",
+  "proof": "dépôt à Strasbourg semaine du 12 octobre"
+ },
+ {
+  "set": "G1",
+  "original": "Faut-il utiliser la coupe Display de GT Sectra pour les titres ?",
+  "query": "Doit-on employer la coupe Display de GT Sectra pour les titres ?",
+  "ref": "rules/Typography1.md",
+  "proof": "La coupe Display, testée le 23 October 2026 dans les maquettes ZenRay Knowledge, est écartée"
+ },
+ {
+  "set": "G1",
+  "original": "Quand et comment Matthieu fait-il sa rétrospective hebdomadaire ?",
+  "query": "Quand et de quelle manière Matthieu réalise-t-il sa rétrospective hebdomadaire ?",
+  "ref": "Memory1/Identity/Matthieu1.md",
+  "proof": "Rétrospective Hebdomadaire (Dimanche 20h) : Ce qui a marché, ce qui a raté, priorité n°1 semaine suivante."
+ },
+ {
+  "set": "G1",
+  "original": "Combien de temps dure le cycle de vente et pourquoi le solde pourrait-il ne pas grossir ?",
+  "query": "Quelle est la durée du cycle de vente, et pourquoi le solde risque-t-il de rester stable ?",
+  "ref": "Memory1/Identity/Matthieu1.md",
+  "proof": "Réalité du cycle de vente : envoi → réponse en jours/semaines → signature → paiement souvent à 30 jours"
+ },
+ {
+  "set": "G1",
+  "original": "Quel est l'équivalent d'un HDA pour un visuel en HTML ou SVG ?",
+  "query": "Qu'est-ce qui correspond à un HDA pour un visuel en HTML ou en SVG ?",
+  "ref": "rules/ParametricHda1.md",
+  "proof": "un fichier HTML ou SVG de gabarit"
+ },
+ {
+  "set": "G1",
+  "original": "Comment appelle-t-on la saison des pluies au Japon, de juin à mi-juillet, et que signifie son kanji ?",
+  "query": "Comment nomme-t-on la saison des pluies au Japon, de juin à mi-juillet, et que signifie son kanji ?",
+  "ref": "Memory1/Japanese/Japanese1.md",
+  "proof": "Juin-mi-juillet = つゆ (kanji 梅雨 = \"pluie des prunes\", car les prunes mûrissent)"
+ },
+ {
+  "set": "G1",
+  "original": "Que refuse Matthieu d'être ?",
+  "query": "À quoi Matthieu refuse-t-il de se réduire ?",
+  "ref": "Memory1/Identity/Matthieu1.md",
+  "proof": "Un perfectionniste qui ne livre jamais"
+ },
+ {
+  "set": "G1",
+  "original": "Quelle est la phrase rituelle pour la première commande en izakaya ?",
+  "query": "Quelle est la formule rituelle pour passer la première commande dans un izakaya ?",
+  "ref": "Memory1/Japanese/Japanese1.md",
+  "proof": "とりあえずビール = \"une bière pour commencer\""
+ },
+ {
+  "set": "G1",
+  "original": "Qu'appelle-t-on un envoi dans le scoreboard ?",
+  "query": "Comment appelle-t-on un envoi inscrit au tableau des scores ?",
+  "ref": "Memory1/Business/2026-09-23-plan-d-attaque/02-SCOREBOARD.md",
+  "proof": "tout ce qui peut te renvoyer un non"
+ },
+ {
+  "set": "G1",
+  "original": "Quelle est l'intention de Matthieu concernant le PVT Japon ?",
+  "query": "Que compte faire Matthieu au sujet du PVT Japon ?",
+  "ref": "Memory1/Identity/Matthieu1.md",
+  "proof": "déposer une demande de **PVT Japon lors de la prochaine ouverture pertinente**, afin de pouvoir prolonger ou renouveler l'expérience d'installation"
+ },
+ {
+  "set": "G1",
+  "original": "Que se passe-t-il quand on pousse sur master du site ZenRayWebsite ?",
+  "query": "Qu'est-ce qui se produit lorsqu'on effectue un push sur master du site ZenRayWebsite ?",
+  "ref": "rules/Toolbox1.md",
+  "proof": "Push sur `master` → **auto-deploy Vercel** (projet zenray-productions, Production)."
+ },
+ {
+  "set": "G1",
+  "original": "Qu'est-ce que le palier à 99 pour cent, le plancher ?",
+  "query": "Qu'est-ce que le palier des 99 %, le plancher ?",
+  "ref": "rules/CardinalValues1.md",
+  "proof": "Tech artist régulier, 45 à 60 k€, confortable, invisible."
+ },
+ {
+  "set": "G1",
+  "original": "De quoi suis-je responsable face au regard des autres ?",
+  "query": "De quoi suis-je comptable aux yeux des autres ?",
+  "ref": "Memory1/Identity/Matthieu1.md",
+  "proof": "Seule ta propre action est ta responsabilité."
+ },
+ {
+  "set": "G1",
+  "original": "Quels outils internes faut-il construire pour terminer le jeu ?",
+  "query": "Quels outils internes doit-on bâtir pour venir à bout du jeu ?",
+  "ref": "Memory1/Identity/Matthieu1.md",
+  "proof": "Tu construis uniquement les outils qui permettent de terminer le jeu :"
+ },
+ {
+  "set": "G1",
+  "original": "Que faut-il faire avant le premier travail d'une conversation Claude, Codex, Gemini ou Antigravity ?",
+  "query": "Que faut-il accomplir avant le premier travail dans une conversation avec Claude, Codex, Gemini ou Antigravity ?",
+  "ref": "CLAUDE.md/CLAUDE.md",
+  "proof": "Avant le premier travail de CHAQUE conversation Claude, Codex, Gemini ou Antigravity, meme une discussion sans fichier"
+ },
+ {
+  "set": "G1",
+  "original": "Quels soins Matthieu utilise-t-il pour le psoriasis du cuir chevelu ?",
+  "query": "Quels traitements Matthieu applique-t-il pour le psoriasis du cuir chevelu ?",
+  "ref": "Memory1/HealthSport/HealthSport1.md",
+  "proof": "**Psolution** : 2x/semaine maximum"
+ },
+ {
+  "set": "G1",
+  "original": "Faut-il acheter une nouvelle tour pour le build Windows ?",
+  "query": "Est-il nécessaire d'acheter une nouvelle tour pour le build Windows ?",
+  "ref": "Memory1/Identity/Matthieu1.md",
+  "proof": "Cela ne justifie pas l'achat immédiat d'une nouvelle tour."
+ },
+ {
+  "set": "G1",
+  "original": "Comment découper une police japonaise lourde pour la servir sur le web ?",
+  "query": "Quelle est la meilleure façon de subdiviser une police japonaise volumineuse pour la diffuser sur le web ?",
+  "ref": "rules/Typography1.md",
+  "proof": "une tranche latine de quelques dizaines de kilo-octets chargée partout"
+ },
+ {
+  "set": "G1",
+  "original": "Quelle est l'ambition correcte pour un créateur solo ?",
+  "query": "Quel est le niveau d'ambition approprié pour un créateur qui travaille seul ?",
+  "ref": "Memory1/Identity/Matthieu1.md",
+  "proof": "Ton ambition correcte est donc :"
+ },
+ {
+  "set": "G1",
+  "original": "Pourquoi choisir WebP plutôt qu'AVIF pour le web ?",
+  "query": "Pourquoi préférer WebP à AVIF pour un usage sur le web ?",
+  "ref": "Memory1/Identity/Matthieu1.md",
+  "proof": "Mieux vaut un format universel (WebP) avec moins de gain qu'un format optimal qui casse silencieusement chez certains users."
+ },
+ {
+  "set": "G1",
+  "original": "Comment copytopoints choisit-il quel template copier sur chaque point ?",
+  "query": "Comment copytopoints détermine-t-il le template à copier sur chaque point ?",
+  "ref": "Memory1/Houdini/Houdini1.md",
+  "proof": "Input 0 = templates (packed) / Input 1 = points nommés"
+ },
+ {
+  "set": "G1",
+  "original": "Comment prouver qu'un déploiement est bien en ligne sur un site partagé ?",
+  "query": "Comment vérifier qu'une mise en production est bien accessible en ligne sur un hébergement mutualisé ?",
+  "ref": "rules/SilentBugs1.md",
+  "proof": "Une autre session peut déployer cinq minutes plus tard."
+ },
+ {
+  "set": "G1",
+  "original": "Quel codec vidéo choisir pour Discord ?",
+  "query": "Quel codec vidéo recommander pour Discord ?",
+  "ref": "Memory1/Identity/Matthieu1.md",
+  "proof": "Discord ne supporte pas H.265 (HEVC)."
+ },
+ {
+  "set": "G1",
+  "original": "Comment transformer une fuite en connaissance adéquate ?",
+  "query": "Comment convertir une fuite en connaissance suffisante ?",
+  "ref": "Memory1/Identity/Matthieu1.md",
+  "proof": "comprendre pourquoi il fuit, ce qui transforme la passion en idée adéquate."
+ },
+ {
+  "set": "G1",
+  "original": "Comment nommer les fonctions et les nodes Houdini créés par script ?",
+  "query": "Comment nommer les fonctions et les nœuds Houdini générés par script ?",
+  "ref": "Memory1/Identity/Matthieu1.md",
+  "proof": "for naming functions and Houdini nodes created via script."
+ },
+ {
+  "set": "G1",
+  "original": "Le plan des 12 semaines pour le retour au Japon a-t-il été validé ?",
+  "query": "Le planning de 12 semaines pour le retour au Japon a-t-il reçu une validation ?",
+  "ref": "Memory1/PVT/2026-09-10-plan-retour-japon/03-plan-12-semaines.md",
+  "proof": "Validé par Matthieu : X, tout."
+ },
+ {
+  "set": "G1",
+  "original": "Peut-on dire たびる pour « voyager » ?",
+  "query": "Est-il correct d'utiliser たびる pour dire « voyager » ?",
+  "ref": "Memory1/Japanese/Japanese1.md",
+  "proof": "たびる n'existe pas. たび (旅) reste comme nom seul."
+ },
+ {
+  "set": "G2",
+  "original": "Comment je peux savoir comment l'activer dans le futurs ?",
+  "query": "Comment faire pour savoir comment l'activer à l'avenir ?",
+  "ref": "-Users-zenray-Create-Build-Memory/1a27158e-ef25-44e6-9e2c-e707e09c67b8",
+  "at": "2026-07-01T04:20:41.402Z"
+ },
+ {
+  "set": "G2",
+  "original": "En fait, ma question c'est je vois pas où est-ce que tu as mis les propositions de plusieurs designs d'artistes. ? /zenray-1-line",
+  "query": "En fait, ce que je demande, c'est : je ne vois pas où tu as placé les propositions de plusieurs designs d'artistes ? /zenray-1-line",
+  "ref": "-Users-zenray--claude-Memory1/beb9938e-4434-4925-8d13-137bb7940fc0",
+  "at": "2026-10-23T11:56:11.522Z"
+ },
+ {
+  "set": "G2",
+  "original": "pourquoi tu n'utilise plus /kanji-stroke-order-html ? ou /kanji-stroke-order ce n'est pas indexé ?",
+  "query": "Pourquoi tu n'utilises plus /kanji-stroke-order-html ? Ou bien /kanji-stroke-order n'est-il pas indexé ?",
+  "ref": "-Users-zenray-Create-Build-Memory/ee7eedf5-c4db-4ffa-b0da-0fd95dbb0ba8",
+  "at": "2026-06-17T06:53:28.898Z"
+ },
+ {
+  "set": "G2",
+  "original": "On est d'accord qu'une fois que c'est upload tu purges bien les segments sinon mon mac va être full de fichiers TEMP et aussi tu check bien que ça dépasse jamais 5GB pour limite github right ?",
+  "query": "On est bien d'accord : une fois l'upload terminé, tu purges bien les segments, sinon mon Mac va se remplir de fichiers TEMP ; et tu vérifies bien que ça ne dépasse jamais la limite GitHub de 5 Go, n'est-ce pas ?",
+  "ref": "-Users-zenray-Create-Build-Memory/1a27158e-ef25-44e6-9e2c-e707e09c67b8",
+  "at": "2026-06-29T04:44:07.533Z"
+ },
+ {
+  "set": "G2",
+  "original": "Ok on part sur contributor pas l'abonnement mais ou le prendre et l'activer et finaliser l'environnement de travail pour commencer à bosser ?",
+  "query": "OK, on part sur le statut contributor et non sur l'abonnement : où le prendre, comment l'activer et finaliser l'environnement de travail pour commencer à bosser ?",
+  "ref": "-Users-zenray--claude-Memory1/4379cc48-b8b1-4af1-b58b-cb338781fa1b",
+  "at": "2026-09-15T07:13:57.036Z"
+ },
+ {
+  "set": "G2",
+  "original": "Mais du coup, Zenrai Assets, il effectue quoi ? comme politique github ? fais un tableau comparatif",
+  "query": "Alors, Zenrai Assets, il fait quoi comme politique GitHub ? Fais un tableau comparatif.",
+  "ref": "-Users-zenray--claude-Memory1/d71651de-2d57-45d0-b20d-830dd146d2ac",
+  "at": "2026-10-14T10:34:26.518Z"
+ },
+ {
+  "set": "G2",
+  "original": "je dois stopper claude code stop le backfill et note la progression ou j'ai rien à faire pas dépendant de claude code ?",
+  "query": "Dois-je arrêter Claude Code, stopper le backfill et noter la progression, ou n'ai-je rien à faire parce que ça ne dépend pas de Claude Code ?",
+  "ref": "-Users-zenray-Create-Build-Memory/1a27158e-ef25-44e6-9e2c-e707e09c67b8",
+  "at": "2026-05-31T10:31:20.049Z"
+ },
+ {
+  "set": "G2",
+  "original": "400 Mo max mais ça va jamais passé la limit github c'est 100 mo ???",
+  "query": "400 Mo maximum, mais ça ne dépassera jamais la limite GitHub, qui est de 100 Mo ???",
+  "ref": "-Users-zenray-Create-Build-Memory/1a27158e-ef25-44e6-9e2c-e707e09c67b8",
+  "at": "2026-06-09T21:24:00.301Z"
+ },
+ {
+  "set": "G2",
+  "original": "Pourquoi tu dis qu'il fait cinq cents déploiements par mois ? Si là il en a consommé zéro, c'est pas logique mathématiquement.",
+  "query": "Pourquoi tu dis qu'il fait cinq cents déploiements par mois ? S'il en a consommé zéro, ce n'est pas logique mathématiquement.",
+  "ref": "-Users-zenray-Create-Build-Memory/4d522b79-b850-48ce-9bd4-edbb3493a8cb",
+  "at": "2026-07-31T11:33:52.933Z"
+ },
+ {
+  "set": "G2",
+  "original": "Explique-moi mieux cette transition de 3mo. C'est-à-dire, en fait, tu utilises la bande passante de Vercel pour faire un bridge de 3mo sur un espace de disque ou un espace virtuel du navigateur. Puis, ça lance une commande git push qui envoie les blobs reconstruits. Je ne comprends pas tellement comment ça fonctionne. Est-ce que tu peux faire un mini-schéma pour m'expliquer ? et toujours répondre à un seul paragraphe. Explique avec le moins de mots possible le moins = le plus.",
+  "query": "Explique-moi mieux cette transition de 3 Mo. C'est-à-dire, en fait, tu utilises la bande passante de Vercel pour faire un pont de 3 Mo sur un espace disque ou un espace virtuel du navigateur. Puis ça lance une commande git push qui envoie les blobs reconstruits. Je ne comprends pas trop comment ça fonctionne. Peux-tu faire un mini-schéma pour m'expliquer ? Et réponds toujours en un seul paragraphe. Explique avec le moins de mots possible : le moins = le plus.",
+  "ref": "-Users-zenray-Create-Build-Memory/ea20f6f6-b82c-480d-b4e2-ee48367fc5aa",
+  "at": "2026-07-21T12:53:18.223Z"
+ },
+ {
+  "set": "G2",
+  "original": "まつ しぬ verbe ?",
+  "query": "« まつ しぬ » est-il un verbe ?",
+  "ref": "-Users-zenray-Create-Build-Memory/c1966084-8231-49ef-95a9-8b7b1089f24f",
+  "at": "2026-07-08T14:25:35.259Z"
+ },
+ {
+  "set": "G2",
+  "original": "Je ne comprends pas ce que tu veux dire par transcodage complet. Pourquoi est-ce que tu passes... Transcodage complet, tu passes en local, on est d'accord ? Tu passes en local sur mon Mac via FFMpgG pour générer les fichiers que tu vas envoyer sur le GitHub repo qui sera ensuite lu par le JS Deliver, c'est ça ? Sinon apprends moi ce que je ne sais pas",
+  "query": "Je ne vois pas ce que tu entends par transcodage complet. Pourquoi tu passes… Transcodage complet, ça veut dire que tu passes en local, c'est bien ça ? Tu passes en local sur mon Mac avec FFMpgG pour générer les fichiers que tu enverras sur le repo GitHub, lus ensuite par JS Deliver, c'est ça ? Sinon, explique-moi ce que je ne sais pas.",
+  "ref": "-Users-zenray-Create-Build-Memory/1a27158e-ef25-44e6-9e2c-e707e09c67b8",
+  "at": "2026-05-31T18:01:30.601Z"
+ },
+ {
+  "set": "G2",
+  "original": "Ou est écrit le repo de l'index ? 1 sentence max",
+  "query": "Où est écrit le repo de l'index ? Une phrase maximum.",
+  "ref": "-Users-zenray-Create-Build-Memory/1a27158e-ef25-44e6-9e2c-e707e09c67b8",
+  "at": "2026-06-11T16:08:26.963Z"
+ },
+ {
+  "set": "G2",
+  "original": "il reste des fichiers vidéos à uploads ? en local ? les anciens pistes d'index peuvent être supprimés du coup depuis ... D'ailleurs, comment ça se passe l'index mapping des 256 ou 253 Go que j'avais uploadé ? Est-ce qu'il est supprimé ou updaté au fur et à mesure de l'upload ou pas du tout, c'est un fichier statique qui est écrit une seule fois ?",
+  "query": "Il reste des fichiers vidéo à uploader ? En local ? Les anciennes pistes d'index peuvent donc être supprimées, depuis… ? D'ailleurs, comment se passe le mapping d'index des 256 ou 253 Go que j'avais uploadés ? Est-ce qu'il est supprimé ou mis à jour au fur et à mesure de l'upload, ou pas du tout ? C'est un fichier statique écrit une seule fois ?",
+  "ref": "-Users-zenray--claude-Memory1/ff2c4a10-5024-4fbb-917a-0b2ac5886f52",
+  "at": "2026-10-14T10:41:46.103Z"
+ },
+ {
+  "set": "G2",
+  "original": "comment ça délai d'un push 30 min ? on peut faire 6 push par minute sur github .???",
+  "query": "Comment se fait-il qu'un push ait un délai de 30 min ? On peut faire 6 pushs par minute sur GitHub ?",
+  "ref": "-Users-zenray--claude-Memory1/ff2c4a10-5024-4fbb-917a-0b2ac5886f52",
+  "at": "2026-10-13T22:20:38.129Z"
+ },
+ {
+  "set": "G2",
+  "original": "korobu ? 1 phrase only",
+  "query": "Korobu ? Une seule phrase.",
+  "ref": "-Users-zenray-Create-Build-Memory/c1966084-8231-49ef-95a9-8b7b1089f24f",
+  "at": "2026-07-08T12:41:14.468Z"
+ },
+ {
+  "set": "G2",
+  "original": "C'est quoi un sha 256 je retrouve cette valeur dans beaucoup de mes projets notamment ZenRayProgress essaie de m'expliquer sommairement \n\n  explique comme si j'avais 10 ans.",
+  "query": "C'est quoi un SHA-256 ? Je retrouve cette valeur dans beaucoup de mes projets, notamment ZenRayProgress. Essaie de m'expliquer sommairement, explique comme si j'avais 10 ans.",
+  "ref": "antigravity/b940b74f-327b-43e8-af57-239fc7f30fa2",
+  "at": "2026-09-07T10:38:26.513398+00:00"
+ },
+ {
+  "set": "G2",
+  "original": "Pourquoi ? Mais pourquoi ? Je comprends pas, normalement tu aurais dû comprendre. ? Du coup, c'est critique, il faut absolument mettre ou alors me poser à la question. Il faut absolument, enfin là c'est dramatique là ce que tu viens de faire. Pourquoi c'était ni dans Zenrai Assets ni dans Zenrai Progress ? J'ai l'impression que je convoque souvent Zenrai Assets en ce moment, mais qu'en fait il n'y a pas forcément besoin de mettre les politiques GitHub dans ce skill, c'est plutôt dans Zenrai Progress en fait. réponds en 1 para",
+  "query": "Pourquoi ? Mais pourquoi ? Je ne comprends pas, tu aurais normalement dû comprendre. ? Donc c'est critique, il faut absolument le mettre, ou alors me poser la question. Il le faut absolument, enfin là c'est dramatique ce que tu viens de faire. Pourquoi ce n'était ni dans Zenrai Assets ni dans Zenrai Progress ? J'ai l'impression que je convoque souvent Zenrai Assets en ce moment, mais qu'en fait il n'y a pas forcément besoin d'y mettre les politiques GitHub dans ce skill, c'est plutôt dans Zenrai Progress. Réponds en un paragraphe.",
+  "ref": "-Users-zenray--claude-Memory1/3e51dc3d-4e58-441b-abf8-9f6013ebbf24",
+  "at": "2026-10-13T23:17:15.302Z"
+ },
+ {
+  "set": "G2",
+  "original": "donc hormis le fast start remux les fichiers vidéos sont identiques bit à bit on pourrait appliquer cette limite 95 mo à n'importe quel fichier maintenant ? et le décoder sur le site un pdf / un docx / un wav pense à d'autres fichiers ? comment tu appelerais cette méthode.",
+  "query": "Donc, à part le fast start (remux), les fichiers vidéo sont identiques bit à bit : on pourrait appliquer cette limite de 95 Mo à n'importe quel fichier maintenant ? Et le décoder sur le site : un PDF, un DOCX, un WAV, ou penser à d'autres types de fichiers ? Comment appellerais-tu cette méthode ?",
+  "ref": "-Users-zenray-Create-Build-Memory/ea20f6f6-b82c-480d-b4e2-ee48367fc5aa",
+  "at": "2026-06-30T17:31:03.464Z"
+ },
+ {
+  "set": "G2",
+  "original": "Il y aurait pas moyen de créer un patch sur cette bottle spécifiquement en créant du code qui permettrait de créer le xinput manquant ? si techniquement faisable go fais le directement crée le patch",
+  "query": "Il n'y aurait pas moyen de créer un patch sur cette bottle spécifiquement, en écrivant du code qui permettrait de créer le xinput manquant ? Si c'est techniquement faisable, vas-y, fais-le directement, crée le patch.",
+  "ref": "-Users-zenray--claude-Memory1/9b789701-af04-4799-ac6d-fd774f5f768f",
+  "at": "2026-09-16T11:39:21.335Z"
+ },
+ {
+  "set": "G2",
+  "original": "En fait, ce qu'on voulait, c'est mix des matériaux. Ce n'est pas mix ni des layers ni mix de la géométrie. Ce qu'on veut, c'est mix des matériaux. Est-ce que ça, c'est possible ?",
+  "query": "En fait, ce qu'on voulait, c'est mélanger les matériaux. Ce n'est pas mélanger ni les layers ni la géométrie. Ce qu'on veut, c'est mélanger les matériaux. Est-ce que c'est possible ?",
+  "ref": "-Users-zenray--claude-Memory1/5b89815a-62ee-4221-96cc-246c084ff175",
+  "at": "2026-10-08T11:13:03.160Z"
+ },
+ {
+  "set": "G2",
+  "original": "JE LA VOIS PAS ou est le path ?",
+  "query": "JE LA VOIS PAS, où est le chemin ?",
+  "ref": "-Users-zenray--claude-Memory1/2562b086-836d-49c5-80c7-0c935a98513c",
+  "at": "2026-10-05T21:29:43.909Z"
+ },
+ {
+  "set": "G2",
+  "original": "A l'avenir la calibration d'un motion prendra environ combien de temps environ ? si tu ne peux pas y répondre maintenant skip cette question et donne moi le path des résultat pour 2D / SVG comment tu as appellé ce module ? 1 line max",
+  "query": "À l'avenir, la calibration d'un motion prendra environ combien de temps ? Si tu ne peux pas y répondre maintenant, passe cette question et donne-moi le chemin des résultats pour 2D / SVG ; comment as-tu appelé ce module ? 1 ligne max",
+  "ref": "-Users-zenray--claude-Memory1/c7091e39-3b47-4490-b479-1f3d80bdbcfa",
+  "at": "2026-10-13T10:02:14.177Z"
+ },
+ {
+  "set": "G2",
+  "original": "Mais pourquoi y'a 3 colonnes ?",
+  "query": "Mais pourquoi y a-t-il 3 colonnes ?",
+  "ref": "-Users-zenray--claude-Memory1/2562b086-836d-49c5-80c7-0c935a98513c",
+  "at": "2026-10-01T13:36:17.065Z"
+ },
+ {
+  "set": "G2",
+  "original": "はなす ça veut dire quoi 1 phrase only ?",
+  "query": "はなす, ça veut dire quoi ? 1 phrase seulement.",
+  "ref": "-Users-zenray-Create-Build-Memory/c1966084-8231-49ef-95a9-8b7b1089f24f",
+  "at": "2026-07-08T14:19:28.000Z"
+ },
+ {
+  "set": "G2",
+  "original": "* plus coder les skills dans claude skills qui permettent d'upload un type de fichier en fonction du media dans l'arborescence souhaité sans te tromper par rapport à toutes les fonctions qui existent.\nj'ai un doute Réutilise le moteur de archive-folder.mjs (déjà bit-exact éprouvé) plutôt que d'en réécrire un. = ZenRayShards ? sinon reste sur ce dernier pour l'architecture 95 mo d'archive c'est la plus efficiente. pour éviter les milliers de repos et ça permet de redownload plus rapidement le fichier au lieux d'avoir des milliers de parties sur un gros fichier.",
+  "query": "* Ne plus coder les skills dans Claude Skills qui permettent d'uploader un type de fichier selon le média dans l'arborescence souhaitée, sans te tromper par rapport à toutes les fonctions existantes.\nJ'ai un doute : réutilise le moteur de archive-folder.mjs (déjà bit-exact et éprouvé) plutôt que d'en réécrire un. = ZenRayShards ? Sinon, reste sur ce dernier pour l'architecture : 95 Mo d'archive, c'est le plus efficient, pour éviter des milliers de repos, et ça permet de retélécharger le fichier plus rapidement au lieu d'avoir des milliers de parties sur un gros fichier.",
+  "ref": "-Users-zenray-Create-Build-Memory/1a27158e-ef25-44e6-9e2c-e707e09c67b8",
+  "at": "2026-07-04T14:50:09.858Z"
+ },
+ {
+  "set": "G2",
+  "original": "Maccy\t490,8 MB\t6\t448\t1186\tzenray\t0 bytes\t0 bytes\t0\t0\t0,0\t1:47,15\t2\tApple\t0,0\t18,00\t0 bytes\t0 bytes\t0 bytes\tNo\tYes\tNo\t(null)\tNo\t0 bytes\t0 bytes\t-\t0 bytes\t0 bytes\tNo\t(null)\t\nMassive prend trop de mémoire. Il faudrait que tu essaies de coder exactement la même application, mais en beaucoup moins d'espace. a la manière de picker color ... Par contre j'ai plus ma barre de settings command space ? tu as du le désactiver ...",
+  "query": "Maccy\t490,8 MB\t6\t448\t1186\tzenray\t0 bytes\t0 bytes\t0\t0\t0,0\t1:47,15\t2\tApple\t0,0\t18,00\t0 bytes\t0 bytes\t0 bytes\tNo\tYes\tNo\t(null)\tNo\t0 bytes\t0 bytes\t-\t0 bytes\t0 bytes\tNo\t(null)\t\nMassive prend trop de mémoire. Il faudrait que tu essaies de coder exactement la même application, mais en beaucoup moins d'espace, à la manière de Picker Color... Par contre, j'ai plus ma barre de réglages Command+Espace ? Tu as dû la désactiver...",
+  "ref": "codex/rollout-2026-10-19T17-41-16-01a154d2-fe4e-7183-a7ec-0172b2eb4323",
+  "at": "2026-10-19T15:47:27.898Z"
+ },
+ {
+  "set": "G2",
+  "original": "Est ce que le prompt serait totalement léger leightweight / rapide / comprends la scene / econome en python / sauvegarde ce qui marche et en synergie avec \n\n ainsi ?",
+  "query": "Est-ce que le prompt serait totalement léger (lightweight / rapide / comprend la scène / économe en Python / sauvegarde ce qui marche) et en synergie avec \n\n ainsi ?",
+  "ref": "antigravity/817ce2b3-49da-4157-97ed-d40d9533b1e7",
+  "at": "2026-09-07T09:14:20.501348+00:00"
+ },
+ {
+  "set": "G2",
+  "original": "sur fg ou mask alors le branchement ?\nfeedback a noter : tu manques de précision c'est la première fois que je fais un matériaux il faut me guider vraiment de manière détaillé.",
+  "query": "Sur fg ou mask, alors le branchement ?\nFeedback à noter : tu manques de précision. C'est la première fois que je fais un matériau, il faut me guider vraiment de manière détaillée.",
+  "ref": "-Users-zenray--claude-Memory1/20b28879-0c00-47e2-8e56-f2cd9a671404",
+  "at": "2026-09-18T10:12:42.131Z"
+ },
+ {
+  "set": "G2",
+  "original": "pourquoi tu convertis pas lors de l'upload en conservant les sous titres et les pistes audio en mp4 ou webm ?",
+  "query": "Pourquoi tu ne convertis pas lors de l'upload en conservant les sous-titres et les pistes audio, en mp4 ou webm ?",
+  "ref": "-Users-zenray-Create-Build-Memory/1a27158e-ef25-44e6-9e2c-e707e09c67b8",
+  "at": "2026-05-30T18:03:46.439Z"
+ },
+ {
+  "set": "G2",
+  "original": "Mais c'est débile du coup parce qu'on upload deux fois plus de fichiers. non je me trompe ? /zenray-1-line",
+  "query": "C'est débile du coup, parce qu'on envoie deux fois plus de fichiers, non ? Je me trompe ? /zenray-1-line",
+  "ref": "-Users-zenray--claude-Memory1/ff2c4a10-5024-4fbb-917a-0b2ac5886f52",
+  "at": "2026-10-14T10:48:06.609Z"
+ },
+ {
+  "set": "G2",
+  "original": "⚠️ Le piège : les webm = 65 % du volume et doivent être RÉENCODÉS (le HLS en segments .ts ne porte pas le VP9). Donc 557 Go à passer en GPU ~temps réel = potentiellement plusieurs heures/jours de transcode, avec une légère perte (CRF). Les mp4 (303 Go), eux, sont quasi instantanés en REMUX. Certes mais en mpeg dash au lieu de hls ce serait pas possible ? au lieu de réencoder 550 gb ? \n\nOu autres solutions qui évite de perdre du temps je trouve ça bizarre sur le web de pas pouvoir streamer du webm ça semble pas logique mais c'est vrai que ça pose peut être problème avec vieux cpu ou navigateur type safari réponds en 1 para",
+  "query": "⚠️ Le piège : les webm représentent 65 % du volume et doivent être RÉENCODÉS (le HLS en segments .ts ne transporte pas le VP9). Donc 557 Go à passer en GPU quasi temps réel, cela peut prendre plusieurs heures, voire des jours de transcodage, avec une légère perte de qualité (CRF). Les mp4 (303 Go), eux, sont quasi instantanés en REMUX. Certes, mais en MPEG-DASH au lieu de HLS, ce ne serait pas possible ? Au lieu de réencoder 550 Go ? Ou d'autres solutions qui évitent de perdre du temps ? Je trouve bizarre que le web ne puisse pas streamer du webm, ça ne semble pas logique, mais c'est vrai que ça pose peut-être problème avec les vieux CPU ou des navigateurs comme Safari. Réponds en 1 paragraphe.",
+  "ref": "-Users-zenray-Create-Build-Memory/ea20f6f6-b82c-480d-b4e2-ee48367fc5aa",
+  "at": "2026-06-09T20:00:32.902Z"
+ },
+ {
+  "set": "G2",
+  "original": "2 go mais avant demande toi si jsdelivr accepte ce genre de pratique normalement aucun risque il va lire simplement un json pas de risque non ? go ducoup. mais à l'avenir tout sera handle sans soucis ? Sois intelligent pour faire utilise le minimum de tokens Réponds à mes questions en 1 para max réponds uniquement pour l'instant",
+  "query": "2 Go, mais avant, demande-toi si jsDelivr accepte ce genre de pratique : normalement aucun risque, il va simplement lire un JSON, pas de risque, non ? Allez, go. Mais à l'avenir, tout sera géré sans souci ? Sois intelligent, utilise le minimum de tokens. Réponds à mes questions en 1 paragraphe max, et uniquement pour l'instant.",
+  "ref": "-Users-zenray-Create-Build-Memory/1a27158e-ef25-44e6-9e2c-e707e09c67b8",
+  "at": "2026-06-11T15:22:52.210Z"
+ },
+ {
+  "set": "G2",
+  "original": "quel intérêt d'utiliser un ide à l'ère des agents claude code desktop / codex et antigravity je comprends pas à quoi sert le produit antigravity IDE ? par rapport aux autres softs cités. c'est la même vitesse en plus à qui ça s'adresse ?",
+  "query": "Quel intérêt d'utiliser un IDE à l'ère des agents Claude Code Desktop, Codex et Antigravity ? Je ne comprends pas à quoi sert le produit Antigravity IDE par rapport aux autres logiciels cités. C'est la même vitesse en plus ? À qui ça s'adresse ?",
+  "ref": "antigravity/4f58925b-aeee-4896-8f2c-ad1217aacdbe",
+  "at": "2026-09-05T06:55:45.611759+00:00"
+ },
+ {
+  "set": "G2",
+  "original": "au dela de cmaf on peut pas changer d'autres paramètres accélérer l'archives qui prend le plus de tout ou skip la relecture sha-256 ? faut que tu m'expliques ces 2 concepts en 4 para max",
+  "query": "Au-delà de CMAF, on ne peut pas changer d'autres paramètres, accélérer l'archive qui prend le plus de temps, ou sauter la vérification SHA-256 ? Il faut que tu m'expliques ces 2 concepts en 4 paragraphes max.",
+  "ref": "-Users-zenray--claude-Memory1/ff2c4a10-5024-4fbb-917a-0b2ac5886f52",
+  "at": "2026-10-12T15:41:52.606Z"
+ },
+ {
+  "set": "G2",
+  "original": "Je comprends pas ... c'est à chaque fois un truc différent ... si le hda portent les textures alors ou faut il les plug via unreal_material ? dans la scene obj ?",
+  "query": "Je ne comprends pas... C'est à chaque fois un truc différent... Si le HDA porte les textures, alors où faut-il les brancher via unreal_material ? Dans la scène, sur l'objet ?",
+  "ref": "-Users-zenray--claude-Memory1/2562b086-836d-49c5-80c7-0c935a98513c",
+  "at": "2026-09-19T16:36:02.402Z"
+ },
+ {
+  "set": "G2",
+  "original": "je branche ou le remap du coup ? 1 line : à chaque prochain prompt note chacun de mes prompts dans feedback.md",
+  "query": "Je branche où le remap, du coup ? En 1 ligne. À chaque prochain prompt, note chacun de mes prompts dans feedback.md.",
+  "ref": "-Users-zenray--claude-Memory1/20b28879-0c00-47e2-8e56-f2cd9a671404",
+  "at": "2026-09-18T10:04:21.219Z"
+ },
+ {
+  "set": "G2",
+  "original": "POLITIQUE = 1900 ? c'est fix ?",
+  "query": "POLITIQUE = 1900, c'est fixé ?",
+  "ref": "-Users-zenray--claude-Memory1/fc4febb5-8a38-4c74-8919-9a72175d0d7e",
+  "at": "2026-10-14T09:23:37.742Z"
+ },
+ {
+  "set": "G2",
+  "original": "Avant de faire tout ça, j'ai juste une question. En fait, le hachage permet quand même que ce soit des points à vif et des points webp, mais il a besoin d'une clé pour décrypter le fichier, c'est ça ? Est-ce que tu peux m'expliquer juste en un seul paragraphe, très très très rapidement, comment fonctionne le truc ? Parce que sur le repo sur GitHub, je vois quand même qu'il y a marqué « points avif, points webp ». 1 para max",
+  "query": "Avant de faire tout ça, j'ai juste une question. En fait, le hachage permet quand même que ce soit des points à vif et des points WebP, mais il a besoin d'une clé pour décrypter le fichier, c'est ça ? Peux-tu m'expliquer en un seul paragraphe, très très très rapidement, comment fonctionne le truc ? Parce que sur le repo GitHub, je vois quand même qu'il y a écrit « points avif, points webp ». 1 paragraphe max.",
+  "ref": "-Users-zenray-Create-Build-Memory/1a27158e-ef25-44e6-9e2c-e707e09c67b8",
+  "at": "2026-06-02T15:20:37.512Z"
+ },
+ {
+  "set": "G2",
+  "original": "Je ne comprends pas ce que ça veut dire CMAF. \n\nest ce que ces leviers sont vraiment disponibles ? faisable ? \n\n<pasted_content id=\"85dd\">\nNe plus envoyer le CMAF depuis chez vous : le produire depuis une machine de centre de données à partir de l’archive. Cela divise par deux la montée du Mac.\n\n1. Archive reprenable et création des dépôts à l’avance : fin des films qui repartent de zéro.\n2. Un jeton de poussée plus trois flux : ligne remplie à environ 100 % au lieu de 78 %.\n3. Un stockage objet (R2) : plus de vagues de blocage, de multiples connexions en parallèle, et la réplication entre fournisseurs depuis le nuage.\n</pasted_content id=\"85dd\">",
+  "query": "Je ne comprends pas ce que veut dire CMAF. Est-ce que ces leviers sont vraiment disponibles ? Faisables ? Ne plus envoyer le CMAF depuis chez vous : le produire depuis une machine de centre de données à partir de l'archive. Cela divise par deux la montée du Mac. 1. Archive reprenable et création des dépôts à l'avance : fin des films qui repartent de zéro. 2. Un jeton de poussée plus trois flux : ligne remplie à environ 100 % au lieu de 78 %. 3. Un stockage objet (R2) : plus de vagues de blocage, de multiples connexions en parallèle, et la réplication entre fournisseurs depuis le nuage.",
+  "ref": "-Users-zenray--claude-Memory1/3e51dc3d-4e58-441b-abf8-9f6013ebbf24",
+  "at": "2026-10-12T11:32:52.568Z"
+ }
+]

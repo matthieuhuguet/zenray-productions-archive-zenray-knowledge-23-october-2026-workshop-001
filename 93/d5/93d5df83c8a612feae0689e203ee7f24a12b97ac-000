@@ -1,0 +1,22 @@
+{
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /Users/zenray/.claude/skills/zenray-feedback/scripts/feedback.py hook",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  },
+  "enableWorkflows": true,
+  "skipWorkflowUsageWarning": true,
+  "agentPushNotifEnabled": true,
+  "permissionMode": "bypassPermissions"
+}

@@ -1,0 +1,282 @@
+[
+ {
+  "set": "G3",
+  "query": "Comment je peux vérifier moi-même ce que l'éditeur affiche, sans attendre que tu regardes l'écran ?",
+  "original": "Comment je peux vérifier moi-même ce que l'éditeur affiche, sans attendre que tu regardes l'écran ?",
+  "docId": "Memory1/ZenRayShards/ZenRayShards1.md#1683",
+  "ref": "Memory1/ZenRayShards/ZenRayShards1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Comment on retrouve la liste des nodes du Limon et du Plank dans Houdini ?",
+  "original": "Comment on retrouve la liste des nodes du Limon et du Plank dans Houdini ?",
+  "docId": "Memory1/SocialMedia/SocialMedia1.md#768",
+  "ref": "Memory1/SocialMedia/SocialMedia1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Comment je fais pour retrouver l'info sur les prix et les plateformes où vendre mes packs Houdini et Unreal ?",
+  "original": "Comment je fais pour retrouver l'info sur les prix et les plateformes où vendre mes packs Houdini et Unreal ?",
+  "docId": "Memory1/PVT/2026-09-10-plan-retour-japon/03-plan-12-semaines.md#140",
+  "ref": "Memory1/PVT/2026-09-10-plan-retour-japon/03-plan-12-semaines.md"
+ },
+ {
+  "set": "G3",
+  "query": "Comment on dit « c'est possible ? » poliment dans un café au Japon, sans avoir l'air pressé ?",
+  "original": "Comment on dit « c'est possible ? » poliment dans un café au Japon, sans avoir l'air pressé ?",
+  "docId": "Memory1/Japanese/Japanese1.md#4973",
+  "ref": "Memory1/Japanese/Japanese1.md"
+ },
+ {
+  "set": "G3",
+  "query": "C'est quoi le grand tournoi d'été des ados au Japon, avec la batte et la balle ?",
+  "original": "C'est quoi le grand tournoi d'été des ados au Japon, avec la batte et la balle ?",
+  "docId": "Memory1/Japanese/Japanese1.md#4653",
+  "ref": "Memory1/Japanese/Japanese1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Comment faire pour reprendre facilement mon travail le matin sans avoir à réfléchir par où commencer ?",
+  "original": "Comment faire pour reprendre facilement mon travail le matin sans avoir à réfléchir par où commencer ?",
+  "docId": "Memory1/Identity/Matthieu1.md#9538",
+  "ref": "Memory1/Identity/Matthieu1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Pourquoi je donne les leçons de japonais par petits morceaux au lieu de tout d'un coup ?",
+  "original": "Pourquoi je donne les leçons de japonais par petits morceaux au lieu de tout d'un coup ?",
+  "docId": "Memory1/Japanese/Japanese1.md#6061",
+  "ref": "Memory1/Japanese/Japanese1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Que faut-il vraiment maîtriser pour dire qu'on a compris une notion, et pas juste qu'on l'a lue ?",
+  "original": "Que faut-il vraiment maîtriser pour dire qu'on a compris une notion, et pas juste qu'on l'a lue ?",
+  "docId": "Memory1/Identity/Matthieu1.md#7930",
+  "ref": "Memory1/Identity/Matthieu1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Quel personnage apparaît quand je lance le jeu, et comment je remets le mannequin de base ?",
+  "original": "Quel personnage apparaît quand je lance le jeu, et comment je remets le mannequin de base ?",
+  "docId": "Memory1/ZenRayShards/ZenRayShards1.md#1601",
+  "ref": "Memory1/ZenRayShards/ZenRayShards1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Où est-ce que je retrouve la liste des fichiers de règles et ce que chacun gère, et comment vérifier que tout est bon ?",
+  "original": "Où est-ce que je retrouve la liste des fichiers de règles et ce que chacun gère, et comment vérifier que tout est bon ?",
+  "docId": "CLAUDE.md/CLAUDE.md#21",
+  "ref": "CLAUDE.md/CLAUDE.md"
+ },
+ {
+  "set": "G3",
+  "query": "Comment on fait pour que les titres s'affichent en italique avec la police GT Sectra, mais que les chiffres restent droits ?",
+  "original": "Comment on fait pour que les titres s'affichent en italique avec la police GT Sectra, mais que les chiffres restent droits ?",
+  "docId": "rules/Typography1.md#206",
+  "ref": "rules/Typography1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Comment retrouver le post où j'ai expliqué l'ajout du petit sas sur le porche, avec les étiquettes de matière sur l'église et le rendu final sur Karma ?",
+  "original": "Comment retrouver le post où j'ai expliqué l'ajout du petit sas sur le porche, avec les étiquettes de matière sur l'église et le rendu final sur Karma ?",
+  "docId": "Memory1/SocialMedia/SocialMedia1.md#1385",
+  "ref": "Memory1/SocialMedia/SocialMedia1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Comment on dit « 今日 » en kanji qui se lit d'une façon bizarre, sans se découper en deux lectures ?",
+  "original": "Comment on dit « 今日 » en kanji qui se lit d'une façon bizarre, sans se découper en deux lectures ?",
+  "docId": "Memory1/Japanese/Japanese1.md#1028",
+  "ref": "Memory1/Japanese/Japanese1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Où est-ce que je peux trouver la différence entre un bouillon léger et un bouillon riche pour ramen ?",
+  "original": "Où est-ce que je peux trouver la différence entre un bouillon léger et un bouillon riche pour ramen ?",
+  "docId": "Memory1/Japanese/Japanese1.md#5412",
+  "ref": "Memory1/Japanese/Japanese1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Comment on dit « ne pas faire » en japonais, la forme courte qu'on met avant « ?",
+  "original": "Comment on dit « ne pas faire » en japonais, la forme courte qu'on met avant « ?",
+  "docId": "Memory1/Japanese/Japanese1.md#6122",
+  "ref": "Memory1/Japanese/Japanese1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Comment on retrouve le nom exact d'un composant dans Houdini, celui qu'on lit dans le breadcrumb de la vue ?",
+  "original": "Comment on retrouve le nom exact d'un composant dans Houdini, celui qu'on lit dans le breadcrumb de la vue ?",
+  "docId": "Memory1/SocialMedia/SocialMedia1.md#244",
+  "ref": "Memory1/SocialMedia/SocialMedia1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Comment je fais pour retrouver quelle appli ZenRay correspond à quel dépôt et quel site ?",
+  "original": "Comment je fais pour retrouver quelle appli ZenRay correspond à quel dépôt et quel site ?",
+  "docId": "CLAUDE.md/CLAUDE.md#53",
+  "ref": "CLAUDE.md/CLAUDE.md"
+ },
+ {
+  "set": "G3",
+  "query": "Comment faire pour que le lecteur ait ses boutons en verre liquide bien alignés, sans barre de progression nue qui dépasse en bas ?",
+  "original": "Comment faire pour que le lecteur ait ses boutons en verre liquide bien alignés, sans barre de progression nue qui dépasse en bas ?",
+  "docId": "Memory1/Design/Design1.md#672",
+  "ref": "Memory1/Design/Design1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Que faut-il garder comme souvenir d'une journée passée à visiter un temple ou flâner, sans en faire un projet à rendre ?",
+  "original": "Que faut-il garder comme souvenir d'une journée passée à visiter un temple ou flâner, sans en faire un projet à rendre ?",
+  "docId": "Memory1/Identity/Matthieu1.md#9426",
+  "ref": "Memory1/Identity/Matthieu1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Comment je fais pour refaire une vidéo avec juste deux ou trois réglages changés, sans tout reconstruire ?",
+  "original": "Comment je fais pour refaire une vidéo avec juste deux ou trois réglages changés, sans tout reconstruire ?",
+  "docId": "rules/ParametricHda1.md#402",
+  "ref": "rules/ParametricHda1.md"
+ },
+ {
+  "set": "G3",
+  "query": "C'était quoi ma meilleure note de tous les temps, déjà ? Un toutou, je crois ?",
+  "original": "C'était quoi ma meilleure note de tous les temps, déjà ? Un toutou, je crois ?",
+  "docId": "Memory1/Identity/Matthieu1.md#958",
+  "ref": "Memory1/Identity/Matthieu1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Comment je fais pour savoir si le texte dépasse de la page du carrousel sans que rien ne soit coupé en silence ?",
+  "original": "Comment je fais pour savoir si le texte dépasse de la page du carrousel sans que rien ne soit coupé en silence ?",
+  "docId": "Memory1/ZenRayShards/Posts/2026-08-23-metahuman-markerless-macos/README.md#17",
+  "ref": "Memory1/ZenRayShards/Posts/2026-08-23-metahuman-markerless-macos/README.md"
+ },
+ {
+  "set": "G3",
+  "query": "Comment je fais pour que Claude arrête les formules gentilles et me donne juste les infos, dans tous mes chats ?",
+  "original": "Comment je fais pour que Claude arrête les formules gentilles et me donne juste les infos, dans tous mes chats ?",
+  "docId": "Memory1/Identity/Matthieu1.md#3880",
+  "ref": "Memory1/Identity/Matthieu1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Comment on met la police Inter dans les interfaces ZenRay, et comment vérifier qu'elle s'affiche vraiment ?",
+  "original": "Comment on met la police Inter dans les interfaces ZenRay, et comment vérifier qu'elle s'affiche vraiment ?",
+  "docId": "rules/Typography1.md#154",
+  "ref": "rules/Typography1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Tu peux m'expliquer si je peux encore entrer dans les listes Forbes 30 Under 30 quand je suis installé à Tokyo ?",
+  "original": "Tu peux m'expliquer si je peux encore entrer dans les listes Forbes 30 Under 30 quand je suis installé à Tokyo ?",
+  "docId": "Memory1/Business/2026-09-23-plan-d-attaque/05-STRATEGIE-4-ANS.md#17",
+  "ref": "Memory1/Business/2026-09-23-plan-d-attaque/05-STRATEGIE-4-ANS.md"
+ },
+ {
+  "set": "G3",
+  "query": "Comment faire pour que les détails techniques restent visibles sans encombrer l'écran ?",
+  "original": "Comment faire pour que les détails techniques restent visibles sans encombrer l'écran ?",
+  "docId": "Memory1/Design/Design1.md#59",
+  "ref": "Memory1/Design/Design1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Comment je fais pour retrouver la décision de passer tout le N5 avant le N4 ?",
+  "original": "Comment je fais pour retrouver la décision de passer tout le N5 avant le N4 ?",
+  "docId": "Memory1/Japanese/Japanese1.md#1513",
+  "ref": "Memory1/Japanese/Japanese1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Quelle image je peux mettre en aperçu d'un article technique sans en fabriquer une nouvelle ?",
+  "original": "Quelle image je peux mettre en aperçu d'un article technique sans en fabriquer une nouvelle ?",
+  "docId": "Memory1/SocialMedia/SocialMedia1.md#743",
+  "ref": "Memory1/SocialMedia/SocialMedia1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Comment on dit en japonais que même les pros se plantent, pour rigoler ?",
+  "original": "Comment on dit en japonais que même les pros se plantent, pour rigoler ?",
+  "docId": "Memory1/Japanese/Japanese1.md#4591",
+  "ref": "Memory1/Japanese/Japanese1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Au Japon, si je paume mon porte-monnaie, j'ai vraiment des chances de le retrouver ?",
+  "original": "Au Japon, si je paume mon porte-monnaie, j'ai vraiment des chances de le retrouver ?",
+  "docId": "Memory1/Japanese/Japanese1.md#4186",
+  "ref": "Memory1/Japanese/Japanese1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Où est-ce que je peux voir la liste des fonctionnalités déjà faites dans mon tableau de bord freelance, et comment sauvegarder mes notes ?",
+  "original": "Où est-ce que je peux voir la liste des fonctionnalités déjà faites dans mon tableau de bord freelance, et comment sauvegarder mes notes ?",
+  "docId": "Memory1/Business/Freelance1.md#373",
+  "ref": "Memory1/Business/Freelance1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Quelle position du banc pour les haltères en développé incliné, et pourquoi pas trop penché ?",
+  "original": "Quelle position du banc pour les haltères en développé incliné, et pourquoi pas trop penché ?",
+  "docId": "Memory1/HealthSport/HealthSport1.md#793",
+  "ref": "Memory1/HealthSport/HealthSport1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Est-ce que j'avais déjà décidé quelque chose pour le nom du perso blond, ou c'était juste une idée en attente ?",
+  "original": "Est-ce que j'avais déjà décidé quelque chose pour le nom du perso blond, ou c'était juste une idée en attente ?",
+  "docId": "Memory1/ZenRayShards/ZenRayShards1.md#1978",
+  "ref": "Memory1/ZenRayShards/ZenRayShards1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Comment dire que j'ai tout construit moi-même et que ça m'empêche d'avoir ce que je veux vraiment ?",
+  "original": "Comment dire que j'ai tout construit moi-même et que ça m'empêche d'avoir ce que je veux vraiment ?",
+  "docId": "Memory1/Identity/Matthieu1.md#10468",
+  "ref": "Memory1/Identity/Matthieu1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Pourquoi le site affichait-il 0 à contacter alors que le store en avait 381, et est-ce que ça venait d'un déploiement fait depuis une mauvaise branche ?",
+  "original": "Pourquoi le site affichait-il 0 à contacter alors que le store en avait 381, et est-ce que ça venait d'un déploiement fait depuis une mauvaise branche ?",
+  "docId": "rules/SilentBugs1.md#188",
+  "ref": "rules/SilentBugs1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Où est-ce que j'avais noté la panne déjà réglée, pour ne pas refaire la même recherche ?",
+  "original": "Où est-ce que j'avais noté la panne déjà réglée, pour ne pas refaire la même recherche ?",
+  "docId": "Memory1/ZenRayShards/ZenRayShards1.md#376",
+  "ref": "Memory1/ZenRayShards/ZenRayShards1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Comment je fais pour savoir si je mange assez pour maigrir ou grossir, sans me prendre la tête tous les jours ?",
+  "original": "Comment je fais pour savoir si je mange assez pour maigrir ou grossir, sans me prendre la tête tous les jours ?",
+  "docId": "Memory1/HealthSport/HealthSport1.md#1040",
+  "ref": "Memory1/HealthSport/HealthSport1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Pourquoi j'arrive jamais à passer à l'action alors que je suis intelligent et ambitieux ?",
+  "original": "Pourquoi j'arrive jamais à passer à l'action alors que je suis intelligent et ambitieux ?",
+  "docId": "Memory1/Identity/Matthieu1.md#172",
+  "ref": "Memory1/Identity/Matthieu1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Pourquoi on met は sur sushi alors que c'est l'objet du verbe ?",
+  "original": "Pourquoi on met は sur sushi alors que c'est l'objet du verbe ?",
+  "docId": "Memory1/Japanese/Japanese1.md#242",
+  "ref": "Memory1/Japanese/Japanese1.md"
+ },
+ {
+  "set": "G3",
+  "query": "Faut-il enregistrer après un gros calcul, sinon tout est perdu si je ferme ?",
+  "original": "Faut-il enregistrer après un gros calcul, sinon tout est perdu si je ferme ?",
+  "docId": "Memory1/ZenRayShards/ZenRayShards1.md#915",
+  "ref": "Memory1/ZenRayShards/ZenRayShards1.md"
+ }
+]

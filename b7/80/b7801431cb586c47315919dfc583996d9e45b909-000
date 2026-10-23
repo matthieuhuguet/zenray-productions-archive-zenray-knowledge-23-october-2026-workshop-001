@@ -1,0 +1,244 @@
+{
+ "proved": 37,
+ "provedRight": 20,
+ "none": 3,
+ "invalid": 0,
+ "retrievedRight": 24,
+ "seconds": 6.3,
+ "rows": [
+  {
+   "q": "Comment je peux vérifier moi-même ce que l'éditeur affiche, sans attendre que tu regardes l'écran ?",
+   "a": "Tu peux vérifier toi-même en demandant une capture du viewport Houdini. La méthode lance un flipbook headless qui écrit une image dans /tmp/houdini_viewport.png (environ 200 Ko). Tu ouvres ensuite ce fichier pour voir le",
+   "proof": "la capture d'écran a été exécutée directement via un flipbook headless sur le viewport",
+   "verdict": "proved-elsewhere"
+  },
+  {
+   "q": "Comment on retrouve la liste des nodes du Limon et du Plank dans Houdini ?",
+   "a": "La liste des nodes du Limon et du Plank se trouve dans le fichier Memory1/SocialMedia/SocialMedia1.md, dans la section « Node lists completes ». C'est la source de vérité pour l'article. Le groupe Limon + Plank est une n",
+   "proof": "(15 nodes, network box Houdini)",
+   "verdict": "right"
+  },
+  {
+   "q": "Comment je fais pour retrouver l'info sur les prix et les plateformes où vendre mes packs Houdini et Unreal ?",
+   "a": "Les passages contiennent des repères de prix et de plateformes pour tes packs. Les plateformes citées sont FAB (Epic), Gumroad et ArtStation, pour les props japonais, les HDAs Houdini et les packs SFX premium. Pour les p",
+   "proof": "Fab reverse 88 % au vendeur (commission plateforme 12 %).",
+   "verdict": "proved-elsewhere"
+  },
+  {
+   "q": "Comment on dit « c'est possible ? » poliment dans un café au Japon, sans avoir l'air pressé ?",
+   "a": "Le passage prévoit de demander « est-ce possible ? » avec douceur, en partant de 〜できますか, plus simple, et en allant vers 〜は可能ですか, plus formel. Pour ne pas paraître pressé, on ajoute un adoucisseur : すみません, ちょっと, 〜んですが… ou",
+   "proof": "demander « est-ce possible ? » gentiment (〜できますか < 〜は可能ですか, adoucisseurs すみません/ちょっと/〜んですが…/もし可能でしたら)",
+   "verdict": "proved-elsewhere"
+  },
+  {
+   "q": "C'est quoi le grand tournoi d'été des ados au Japon, avec la batte et la balle ?",
+   "a": "Le grand tournoi d'été des lycéens au Japon s'appelle 甲子園 (Kōshien). C'est un tournoi national de baseball réservé aux lycées, et c'est l'événement émotionnel de l'été à la télévision. Tout le pays suit des lycéens de 17",
+   "proof": "Et surtout : **甲子園** こうしえん — le tournoi LYCÉEN d'été. Tout le pays pleure devant des lycéens de 17 ans",
+   "verdict": "right"
+  },
+  {
+   "q": "Comment faire pour reprendre facilement mon travail le matin sans avoir à réfléchir par où commencer ?",
+   "a": "Prépare le premier geste la veille, avant de fermer ton travail : laisse le projet ouvert si c'est sûr, ouvre le fichier concerné, pose une note très courte et écris la prochaine action, qui doit prendre moins de 25 minu",
+   "proof": "Préparer le premier geste la veille.",
+   "verdict": "right"
+  },
+  {
+   "q": "Pourquoi je donne les leçons de japonais par petits morceaux au lieu de tout d'un coup ?",
+   "a": "Sa mémoire retient mieux quand il répète en plusieurs fois, espacées dans le temps, plutôt que tout d'un coup. Pendant son régime intensif de japonais, il a noté que 5 révisions réparties dans la journée valent mieux que",
+   "proof": "Répétition espacée > répétition massée : 5 fois maintenant + 3 fois dans 1h + 3 fois le soir > 30 fois d'affilée",
+   "verdict": "proved-elsewhere"
+  },
+  {
+   "q": "Que faut-il vraiment maîtriser pour dire qu'on a compris une notion, et pas juste qu'on l'a lue ?",
+   "a": "Comprendre une notion, ce n'est pas la reconnaître quand on la voit. Reconnaître relève du repérage passif. Savoir commence là où le cerveau résiste, quand on doit reformuler le principe sans l'avoir sous les yeux. Pour ",
+   "proof": "Reconnaître un concept quand on le voit n'est pas le savoir : c'est du pattern-matching passif.",
+   "verdict": "proved-elsewhere"
+  },
+  {
+   "q": "Quel personnage apparaît quand je lance le jeu, et comment je remets le mannequin de base ?",
+   "a": "Quand tu lances le jeu, c'est le personnage third person de SandboxCharacter_CMC qui apparaît. Le niveau L_Level1 utilise le mode de jeu GM_Sandbox, qui fait spawner ce personnage du Game Animation Sample, avec la locomo",
+   "proof": "Le `GameMode Override` de `/Game/ZenRayShards/Levels/L_Level1` passe de `None` à `/Game/Blueprints/GM_Sandbox.GM_Sandbox",
+   "verdict": "right"
+  },
+  {
+   "q": "Où est-ce que je retrouve la liste des fichiers de règles et ce que chacun gère, et comment vérifier que tout est bon ?",
+   "verdict": "none"
+  },
+  {
+   "q": "Comment on fait pour que les titres s'affichent en italique avec la police GT Sectra, mais que les chiffres restent droits ?",
+   "a": "Les titres (h1, h2, h3) sont en GT Sectra LCG Regular 400 italique, avec le fichier `GT-Sectra-LCGV-Regular-Italic.otf`. Il faut toujours prendre la coupe normale, jamais Display. Les chiffres restent droits, même dans u",
+   "proof": "les chiffres, même dans un titre, restent droits en Anthropic Serif Regular 400 (span `.num`)",
+   "verdict": "right"
+  },
+  {
+   "q": "Comment retrouver le post où j'ai expliqué l'ajout du petit sas sur le porche, avec les étiquettes de matière sur l'église et le rendu final sur Karma ?",
+   "a": "Le post s'appelle « Le post, trilingue » et date du 12 septembre 2026. Il est archivé dans Memory1/Posts/2026-09-12-vestibule-tags-materiaux/, sous le nom post-vestibule-tags-materiaux.md. Il est rédigé en anglais, en ja",
+   "proof": "Today I continued developing my procedural Louisiana bayou church in Houdini, adding a vestibule that I placed on the po",
+   "verdict": "proved-elsewhere"
+  },
+  {
+   "q": "Comment on dit « 今日 » en kanji qui se lit d'une façon bizarre, sans se découper en deux lectures ?",
+   "a": "Le mot se lit きょう (aujourd'hui). C'est une lecture irrégulière appelée jukujikun (熟字訓) : le mot entier a cette lecture, qu'on ne peut pas découper kanji par kanji. Ni 今 ni 日 ne se lisent きょう tout seul. Il faut apprendre ",
+   "proof": "Ni 今 ni 日 ne se lisent きょう isolément — c'est le mot entier qui a cette lecture, à apprendre comme un tout.",
+   "verdict": "proved-elsewhere"
+  },
+  {
+   "q": "Où est-ce que je peux trouver la différence entre un bouillon léger et un bouillon riche pour ramen ?",
+   "a": "Ton fichier sur le japonais explique la texture du bouillon avec deux mots. こってり (kotteri) veut dire riche, gras et intense. あっさり (assari) veut dire léger, clair et délicat. Un bouillon léger est donc en あっさり, un bouillo",
+   "proof": "こってり = riche, gras, intense.",
+   "verdict": "right"
+  },
+  {
+   "q": "Comment on dit « ne pas faire » en japonais, la forme courte qu'on met avant « ?",
+   "a": "Pour dire « ne pas faire » avant « ? », on utilise la forme courte négative du verbe, qui se termine par ない. On la place devant つもりです pour dire « je compte ne pas faire ». Exemple de structure : [ない] + つもりです. Pour une in",
+   "proof": "[ない] + つもりです = je compte ne pas faire",
+   "verdict": "proved-elsewhere"
+  },
+  {
+   "q": "Comment on retrouve le nom exact d'un composant dans Houdini, celui qu'on lit dans le breadcrumb de la vue ?",
+   "a": "Le nom exact se lit directement dans le breadcrumb de la vue Houdini, qui affiche le chemin du noeud, par exemple `obj/Church/Component_X`. Le label du composant est le dernier segment du chemin, après `Church/`. Quand t",
+   "proof": "Les noms sont lus directement depuis le breadcrumb `obj/Church/Component_X` dans le viewport Houdini.",
+   "verdict": "right"
+  },
+  {
+   "q": "Comment je fais pour retrouver quelle appli ZenRay correspond à quel dépôt et quel site ?",
+   "a": "Les notes ne donnent qu'une correspondance partielle. Le projet Vercel `zenray-shards` correspond au dépôt ZenRayProgress, et le projet `zenray-productions` correspond au site matthieuhuguet.com. Pour l'app zenray-assets",
+   "proof": "Projets connus : `zenray-shards` = ZenRayProgress ; `zenray-productions` = `matthieuhuguet.com`.",
+   "verdict": "proved-elsewhere"
+  },
+  {
+   "q": "Comment faire pour que le lecteur ait ses boutons en verre liquide bien alignés, sans barre de progression nue qui dépasse en bas ?",
+   "verdict": "none"
+  },
+  {
+   "q": "Que faut-il garder comme souvenir d'une journée passée à visiter un temple ou flâner, sans en faire un projet à rendre ?",
+   "a": "Une journée de visite ou de flânerie n'a pas à produire quoi que ce soit. Le souvenir peut rester simplement vécu, sans prise de notes ni projet à rendre. La règle à garder : seul l'apprentissage professionnel qui rempla",
+   "proof": "Un temple peut être visité sans prise de notes.",
+   "verdict": "proved-elsewhere"
+  },
+  {
+   "q": "Comment je fais pour refaire une vidéo avec juste deux ou trois réglages changés, sans tout reconstruire ?",
+   "a": "Tu ne reconstruis rien. Tu changes seulement les réglages qui te concernent, puis tu relances. Le script reste la mécanique, sans valeurs, comme la définition d'un HDA. Si le changement vaut pour tous les shorts (une cou",
+   "proof": "quand tu changes un paramètre, c'est un fichier de réglages qui change, pas le script.",
+   "verdict": "proved-elsewhere"
+  },
+  {
+   "q": "C'était quoi ma meilleure note de tous les temps, déjà ? Un toutou, je crois ?",
+   "a": "Ta meilleure note est **Shingeki No Kyojin S01**, avec 100/100, présentée comme un chef-d'œuvre absolu. Ce n'est pas Totoro : il est à 96, à la 6e place de ton top 10 personnel. Dans le même top, Le Vent Se Lève arrive s",
+   "proof": "**Shingeki No Kyojin S01** (100) - Chef-d'œuvre absolu",
+   "verdict": "proved-elsewhere"
+  },
+  {
+   "q": "Comment je fais pour savoir si le texte dépasse de la page du carrousel sans que rien ne soit coupé en silence ?",
+   "a": "Le carrousel ne recopie pas le texte. Le script `pages.py` lit les blocs du JSON publié et applique les styles du site. Il cherche aussi la plus grande taille de corps qui tient dans la page, par dichotomie entre `taille",
+   "proof": "Le script fait donc écrire à la page sa propre hauteur, la compare au cadre, et rend un code 3 si ça déborde.",
+   "verdict": "right"
+  },
+  {
+   "q": "Comment je fais pour que Claude arrête les formules gentilles et me donne juste les infos, dans tous mes chats ?",
+   "a": "Tu dois coller un prompt de préférences dans les paramètres de Claude. Ta mémoire contient un texte prêt à l'emploi, daté du 14 avril 2026, qui demande un mode purement informationnel : pas de prénom, pas de formules soc",
+   "proof": "\"User Preferences\" dans les paramètres Claude → s'applique à toutes les conversations sans avoir à le recoller.",
+   "verdict": "right"
+  },
+  {
+   "q": "Comment on met la police Inter dans les interfaces ZenRay, et comment vérifier qu'elle s'affiche vraiment ?",
+   "a": "Pour les interfaces ZenRay, on utilise la famille `InterVariable` en Regular 400. Le fichier de police est embarqué dans le projet et déclaré avec `@font-face`, pour que le navigateur le charge lui-même. Le repli Hiragin",
+   "proof": "Le nom CSS seul ne prouve pas la police rendue : vérifier une phrase latine dans le navigateur.",
+   "verdict": "right"
+  },
+  {
+   "q": "Tu peux m'expliquer si je peux encore entrer dans les listes Forbes 30 Under 30 quand je suis installé à Tokyo ?",
+   "a": "Oui, tu peux encore entrer dans la liste Forbes JAPAN 30 UNDER 30 en étant installé à Tokyo. Elle accepte les personnes basées au Japon, à condition d'avoir moins de 30 ans au 25 août et de rayonner à l'international ou ",
+   "proof": "Forbes JAPAN est ta meilleure porte, et elle n'existe que parce que tu pars en janvier.",
+   "verdict": "right"
+  },
+  {
+   "q": "Comment faire pour que les détails techniques restent visibles sans encombrer l'écran ?",
+   "a": "Garde l'explication principale en clair, en haut et bien visible. Les détails techniques, comme les chemins ou les noms de fichiers, viennent après, dans une ligne discrète, grise et petite. Ils restent donc accessibles ",
+   "proof": "ligne discrète, grise, petite, sous l'explication principale en clair.",
+   "verdict": "proved-elsewhere"
+  },
+  {
+   "q": "Comment je fais pour retrouver la décision de passer tout le N5 avant le N4 ?",
+   "a": "La décision est notée dans le fichier `Memory1/Japanese/Japanese1.md`, dans la section « PIVOT STRATÉGIQUE » datée du 2026-04-21. Elle s'intitule « Décision Matthieu » et dit que le N5 doit être complet avant tout conten",
+   "proof": "Décision : N5 COMPLET avant tout contenu N4.",
+   "verdict": "right"
+  },
+  {
+   "q": "Quelle image je peux mettre en aperçu d'un article technique sans en fabriquer une nouvelle ?",
+   "a": "Utilise le fichier `thumbnail.avif` déjà présent dans le dossier de l'article, par exemple `/public/projects/hda-stairs-church/thumbnail.avif`. C'est un screenshot du hero de l'article, donc rien à générer. Pour les arti",
+   "proof": "la meilleure thumbnail s'est averee etre un simple screenshot du hero de l'article",
+   "verdict": "right"
+  },
+  {
+   "q": "Comment on dit en japonais que même les pros se plantent, pour rigoler ?",
+   "a": "On dit 猿も木から落ちる (さるもきからおちる), littéralement « même les singes tombent des arbres ». On l'emploie en riant quand quelqu'un de doué rate quelque chose, ou quand on se trompe soi-même en japonais. C'est une autodérision parf",
+   "proof": "猿も木から落ちる さるもきからおちる = \"même les singes tombent des arbres\"",
+   "verdict": "right"
+  },
+  {
+   "q": "Au Japon, si je paume mon porte-monnaie, j'ai vraiment des chances de le retrouver ?",
+   "a": "Ta mémoire indique qu'un portefeuille perdu au Japon revient dans environ 90% des cas. C'est un chiffre noté dans tes fiches, pas une statistique vérifiée. Le bon réflexe : retourner au dernier endroit où tu l'as eu, pui",
+   "proof": "un portefeuille perdu revient dans ~90% des cas",
+   "verdict": "right"
+  },
+  {
+   "q": "Où est-ce que je peux voir la liste des fonctionnalités déjà faites dans mon tableau de bord freelance, et comment sauvegarder mes notes ?",
+   "a": "La liste des fonctionnalités déjà faites est dans le fichier Memory1/Business/Freelance1.md, sous la section « Features implementees ». On y trouve la table Studios avec ses filtres, la table Contacts avec les relances, ",
+   "proof": "**Annotations** : persistees localStorage (`freelance-dash-v1`), export/import JSON",
+   "verdict": "right"
+  },
+  {
+   "q": "Quelle position du banc pour les haltères en développé incliné, et pourquoi pas trop penché ?",
+   "a": "Le banc se règle entre 30 et 45 degrés pour le développé incliné aux haltères. Les haltères montent vers le haut, puis la descente se fait de façon contrôlée. Il ne faut pas incliner le banc trop fort. Selon les notes du",
+   "proof": "banc trop incliné (→ devient du développé militaire, pecs plus sollicités)",
+   "verdict": "right"
+  },
+  {
+   "q": "Est-ce que j'avais déjà décidé quelque chose pour le nom du perso blond, ou c'était juste une idée en attente ?",
+   "a": "Non, tu ne l'avais pas décidé. Le nom Amael est noté comme une simple idée en attente, pas comme une décision. Il est apparu le 3 août sous la forme « personnage d'Amael ? ». Le 21 août, une référence visuelle d'un perso",
+   "proof": "À traiter comme des traces, jamais comme des décisions.",
+   "verdict": "right"
+  },
+  {
+   "q": "Comment dire que j'ai tout construit moi-même et que ça m'empêche d'avoir ce que je veux vraiment ?",
+   "verdict": "none"
+  },
+  {
+   "q": "Pourquoi le site affichait-il 0 à contacter alors que le store en avait 381, et est-ce que ça venait d'un déploiement fait depuis une mauvaise branche ?",
+   "a": "Oui. Les commits de la page Freelance étaient sur la branche `freelance-engine`, fusionnée seulement dans le `main` local. Pendant ce temps, `origin/main` avançait de 20 commits sans ce travail. Un redéploiement fait dep",
+   "proof": "la page Freelance a affiché 0 studio alors que le store en compte 381",
+   "verdict": "proved-elsewhere"
+  },
+  {
+   "q": "Où est-ce que j'avais noté la panne déjà réglée, pour ne pas refaire la même recherche ?",
+   "a": "La cause du bug de l'aperçu est notée « dans la doc », mais les passages ne disent pas dans quel fichier. Le protocole range les bugs résolus dans la section 0.6 SolvedBugs de ZenRayShards1.md, donc c'est le premier endr",
+   "proof": "Cause notée dans la doc (carte à `backdrop-filter` qui piégeait le `fixed`)",
+   "verdict": "proved-elsewhere"
+  },
+  {
+   "q": "Comment je fais pour savoir si je mange assez pour maigrir ou grossir, sans me prendre la tête tous les jours ?",
+   "a": "Tu ne juges pas ton bilan sur une seule pesée. Pèse-toi 3 à 7 matins par semaine dans des conditions similaires, fais la moyenne sur 7 jours et mesure ton tour de taille une fois par semaine. Note aussi tes performances ",
+   "proof": "se peser 3 à 7 matins par semaine dans des conditions similaires",
+   "verdict": "right"
+  },
+  {
+   "q": "Pourquoi j'arrive jamais à passer à l'action alors que je suis intelligent et ambitieux ?",
+   "a": "D'après ta mémoire, ton blocage vient surtout de trois défauts. Le premier est le perfectionnisme bloquant : tu ne publies pas tant que ce n'est pas parfait. Le deuxième est le mythe de l'œuvre ultime : la grandeur du pr",
+   "proof": "Pas parfait = pas publié.",
+   "verdict": "proved-elsewhere"
+  },
+  {
+   "q": "Pourquoi on met は sur sushi alors que c'est l'objet du verbe ?",
+   "a": "Dans tes notes, la réponse est que は ne marque pas le sujet. Il marque le thème, c'est-à-dire ce dont on parle. Sur le plan grammatical, sushi reste l'objet direct du verbe. Le は le fait passer au rang de sujet de la con",
+   "proof": "Sushi reste l'objet direct au niveau grammatical, は le promeut au rang de \"thème de la conversation\"",
+   "verdict": "right"
+  },
+  {
+   "q": "Faut-il enregistrer après un gros calcul, sinon tout est perdu si je ferme ?",
+   "a": "D'après tes notes, une donnée sauvegardée survit à un plantage de l'éditeur. Dans le cas de l'animation calculée, le fichier `.uasset` est resté identique avant et après le plantage. La règle à garder : sauvegarde dès qu",
+   "proof": "Une donnée SAUVEGARDÉE survit à un plantage de l'éditeur. Le réflexe à garder est donc de sauvegarder dès qu'un calcul l",
+   "verdict": "proved-elsewhere"
+  }
+ ]
+}
