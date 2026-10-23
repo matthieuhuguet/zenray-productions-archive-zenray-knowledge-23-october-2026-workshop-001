@@ -1,0 +1,22 @@
+// 23 October 2026 14:05: capture V2 (3 layouts x 2 Sectra cuts, light; A text dark) and measure fonts and left-edge alignment.
+import { chromium } from '/Users/zenray/Create/Build/Productions/GithubProductions/ZenRayProgress/node_modules/playwright/index.mjs'
+const b = await chromium.launch({ executablePath: '/Users/zenray/Library/Caches/ms-playwright/chromium_headless_shell-1234/chrome-headless-shell-mac-arm64/chrome-headless-shell' })
+const out = process.argv[2]
+for (const scheme of ['light', 'dark']) {
+  const p = await b.newPage({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, colorScheme: scheme })
+  await p.goto('http://localhost:4196/ZenRayKnowledgeDesignsV2.html'); await p.evaluate(() => document.fonts.ready)
+  for (const c of scheme === 'light' ? ['text', 'display'] : ['text']) {
+    await p.click(`[data-c=${c}]`)
+    for (const l of ['a', 'b', 'c']) {
+      await p.click(`[data-l=${l}]`); await p.evaluate(() => document.fonts.ready)
+      const m = await p.evaluate(() => {
+        const ff = (s) => { const e = document.querySelector(s); return e ? getComputedStyle(e).fontFamily.split(',')[0] + '/' + getComputedStyle(e).fontStyle : '-' }
+        const lefts = [...document.querySelectorAll('.row > span:last-child, .group')].map((e) => Math.round(e.getBoundingClientRect().left))
+        return { title: ff('.panel h2'), group: ff('.group'), num: ff('.panel h2 .num, .panel .when .num'), row: ff('.row'), answer: ff('.panel .a'), lefts: [...new Set(lefts)], loaded: document.fonts.check("16px 'GT Sectra LCG Display'") && document.fonts.check("16px 'GT Sectra LCG'"), overflow: document.documentElement.scrollWidth > innerWidth }
+      })
+      console.log(scheme, c, l, JSON.stringify(m))
+      await p.screenshot({ path: `${out}/V2-${l.toUpperCase()}-${c}-${scheme}.png` })
+    }
+  }
+}
+await b.close()

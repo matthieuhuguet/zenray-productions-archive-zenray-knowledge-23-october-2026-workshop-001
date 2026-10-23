@@ -1,0 +1,57 @@
+# ZenRay Knowledge, feuille de méthode (23 October 2026)
+
+## Le blocage, nommé et mesuré (23 October 2026)
+
+- Mots de Matthieu (grammaire seule) : « tu crées des questions alors qu'en soi il y a déjà toutes les conversations ; tu recrées une autre source de vérité avec Questions1.md ; trouve la meilleure méthodologie après une batterie de tests ». (23 October 2026)
+- Mesure de la méthode V1 (questions générées par Haiku puis copiées) : 2 212 questions et 112 unités lues sur 696 en 3 h 15, environ 2 $ ; chaque réponse est une COPIE reformulée d'un passage de Memory, donc une seconde vérité qui vieillit quand Memory change. Service arrêté le 23 October 2026 à 19:58. (23 October 2026)
+- Défauts visuels mesurés : fond bleu (photo propre à la vue, ciel en plein cadre) et réponse débordant de 68 px (content-box). Corrigés et déployés le 23 October 2026. (23 October 2026)
+
+## Le résultat vérifiable visé (23 October 2026)
+
+Pour une question tapée au quotidien, dans d'autres mots que ceux de la mémoire : (1) retrouver le bon passage de Memory, ou la conversation où la question a déjà été posée, dans les 5 premiers résultats ; (2) répondre en 1 à 3 paragraphes avec une preuve exacte ; (3) sans copier Memory ailleurs. Mesures : rappel à 1 et à 5, MRR, temps, coût, octets recopiés. (23 October 2026)
+
+## La batterie (23 October 2026)
+
+- G1, mémoire : 40 faits pris au hasard (graine fixe) parmi les entrées V1 issues de Memory ; la question est REFORMULÉE par Haiku avec d'autres mots, la vérité attendue est le fichier source et sa preuve. (23 October 2026)
+- G2, déjà posé : 40 vraies questions de Matthieu dans les conversations, reformulées ; la vérité attendue est la conversation et l'instant. (23 October 2026)
+- Contrôle du vérificateur dans les deux sens : la question d'origine (non reformulée) doit être retrouvée (vert), une question absurde ne doit rien retrouver de juste (rouge). (23 October 2026)
+
+## Les méthodes (23 October 2026)
+
+| N° | Principe | Copie de Memory ? |
+|---|---|---|
+| M01 | ripgrep, fichiers classés par nombre de mots trouvés | non |
+| M02 | index mapping maison (tous les mots requis) sur les sections de Memory | non |
+| M03 | BM25 maison sur les sections (pondération par rareté des mots) | non |
+| M04 | SQLite FTS5 bm25 sur les sections | non |
+| M05 | BM25 sur les questions générées V1 (référence de l'ancienne méthode) | oui |
+| M06 | M04 + expansion de la requête par Haiku (synonymes FR et EN) | non |
+| M07 | M04 top 30 + reclassement par Haiku | non |
+| M08 | plongements Apple NLEmbedding (sens), sections | non |
+| M09 | titres de section seuls | non |
+| M10 | BM25 avec racinisation française simple | non |
+| M11 | hybride M04 + M08 (fusion des rangs RRF) | non |
+| M12 | hybride M04 + M08 + M05 | oui |
+| M13 | trigrammes (tolère fautes et dictée) | non |
+| M14 | M11 + bonus de récence | non |
+| M15 | M11 + bonus du fichier Identity | non |
+| M16 | M11 sur Memory + conversations dans un seul index | non |
+
+Phase 1 : retrouver (toutes). Phase 2 : répondre avec preuve depuis le top 5 (les 3 meilleures). Phase 3 : temps et coût sur 200 requêtes. Phase 4 : mise à jour quand Memory change (incrémental). (23 October 2026)
+
+## Résultats mesurés (23 October 2026)
+
+Corpus tiré des sources, sans copie : 8 096 documents (7 085 sections de Memory, 1 011 questions de conversation). Rappel = bonne source dans le top 5. Vérificateur testé dans les deux sens : batterie mélangée, rappel 0 pour toutes les méthodes (rouge) ; questions d'origine, rappel en hausse (vert). (23 October 2026)
+
+| Méthode | G1 mémoire (biaisée V1) | G2 déjà posé | G3 mémoire sans biais | Bon fichier G3 | Temps |
+|---|---|---|---|---|---|
+| M04 FTS5 | 62,5 % | **100 %** | 40 % | 62,5 % | 1,6 ms |
+| M05 questions générées V1 | 97,5 % (biais) | 85 % | **10 %** | 50 % | 0,4 ms |
+| M08 plongements Apple | 2,5 % | 40 % | 0 % | 2,5 % | 7 ms |
+| M10 BM25 racines françaises | 67,5 % | 100 % | 45 % | 65 % | 3 ms |
+| M06 expansion Haiku + FTS5 | 57,5 % | 97,5 % | 60 à 62,5 % | 82,5 à 85 % | 2,3 s |
+| **M18 expansion + FTS5 + BM25 racines + reclassement Haiku** | 67,5 % | 87,5 % | **75 %** | **95 %** | 4,3 s |
+
+Phase 2 (réponse prouvée depuis le top 5, Haiku effort low, retrieval M06) : 37 réponses prouvées sur 40, 0 preuve invalide, 3 « non trouvé » honnêtes, 20 prouvées par la section exacte, 17 par un autre passage ; 6,3 s par question. (23 October 2026)
+
+Verdict proposé : deux voies. « Déjà posé ? » = FTS5 sur le journal des vraies questions (100 %, 1,6 ms, sans modèle). « Que dit ma mémoire ? » = M18 sur les sections de Memory, puis réponse prouvée par Haiku (effort low). Rien n'est recopié : l'index se reconstruit depuis les sources, la réponse cite fichier et ligne. M05 (V1) et M08 abandonnées. (23 October 2026)

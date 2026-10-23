@@ -1,0 +1,11 @@
+// 23 October 2026: capture the three Knowledge proposals at 1440x900 (light and dark) in isolated Chromium.
+import { chromium } from '/Users/zenray/Create/Build/Productions/GithubProductions/ZenRayProgress/node_modules/playwright/index.mjs'
+const url = 'http://localhost:4196/ZenRayKnowledgeDesigns.html'
+const out = process.argv[2]
+const b = await chromium.launch({ executablePath: '/Users/zenray/Library/Caches/ms-playwright/chromium_headless_shell-1234/chrome-headless-shell-mac-arm64/chrome-headless-shell' })
+for (const scheme of ['light', 'dark']) {
+  const p = await b.newPage({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, colorScheme: scheme })
+  await p.goto(url); await p.evaluate(() => document.fonts.ready)
+  for (const v of ['a', 'b', 'c']) { await p.click(`[data-v=${v}]`); await p.evaluate(() => document.fonts.ready); console.log(scheme, v, await p.evaluate(() => { const ff = (q) => { const e = document.querySelector('.view.on ' + q); return e ? getComputedStyle(e).fontFamily.slice(0, 14) + '/' + getComputedStyle(e).fontStyle : '-' }; return { title: ff('.day b, .hero h1, .pane .q'), q: ff('.q'), num: ff('.q .num, .day .num, .dom .n'), body: ff('.a') } })); await p.screenshot({ path: `${out}/Knowledge-${v.toUpperCase()}-${scheme}.png` }) }
+}
+await b.close()

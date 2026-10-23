@@ -1,0 +1,6 @@
+import { chromium } from '/Users/zenray/Create/Build/Productions/GithubProductions/ZenRayProgress/node_modules/playwright/index.mjs'
+const b = await chromium.launch({ executablePath: '/Users/zenray/Library/Caches/ms-playwright/chromium_headless_shell-1234/chrome-headless-shell-mac-arm64/chrome-headless-shell' })
+const p = await b.newPage({ viewport: { width: 390, height: 844 } })
+await p.goto('http://localhost:4196/ZenRayKnowledgeDesignsV5.html'); await p.waitForTimeout(400)
+console.log(await p.evaluate(() => [document.documentElement.scrollWidth, innerWidth, [...document.querySelectorAll('body *')].filter((e) => e.getBoundingClientRect().right > innerWidth + 1).slice(0, 6).map((e) => e.tagName + '.' + e.className + ' ' + Math.round(e.getBoundingClientRect().right))]))
+await b.close()

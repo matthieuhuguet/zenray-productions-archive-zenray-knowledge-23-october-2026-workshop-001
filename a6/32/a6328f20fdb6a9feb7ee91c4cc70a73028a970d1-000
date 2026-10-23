@@ -1,0 +1,8 @@
+#!/bin/zsh
+# 23 October 2026: serves the Knowledge worktree on port 3310 (same recipe as zenray-refine: passive Assets, gh token, loopback).
+cd /Users/zenray/Create/Build/Productions/GithubProductions/ZenRayProgress
+export GITHUB_TOKEN=$(gh auth token)
+export ZENRAY_API_SECRET=
+export ZR_ASSETS_PASSIVE=1
+export ZENRAY_MEDIA_KEY=$(cat /Users/zenray/Create/Build/Productions/GithubProductions/ZenRayProgress/.zenray-media-key)
+exec node scripts/local-server.mjs 3310

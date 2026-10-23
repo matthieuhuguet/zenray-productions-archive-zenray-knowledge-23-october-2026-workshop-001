@@ -1,0 +1,31 @@
+// 23 October 2026: V5 checks. For every row (and a 60-row thread), the panel and glass shape tops must equal the row top.
+import { chromium } from '/Users/zenray/Create/Build/Productions/GithubProductions/ZenRayProgress/node_modules/playwright/index.mjs'
+const b = await chromium.launch({ executablePath: '/Users/zenray/Library/Caches/ms-playwright/chromium_headless_shell-1234/chrome-headless-shell-mac-arm64/chrome-headless-shell' })
+const out = process.argv[2], file = process.argv[3] || 'ZenRayKnowledgeDesignsV5.html'
+const p = await b.newPage({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2 }); await p.route('**/*', (r) => r.continue({ headers: { ...r.request().headers(), 'cache-control': 'no-cache' } }))
+const errors = [], bytes = {}; p.on('response', async (r) => { try { bytes[r.url().split('/').pop()] = (await r.body()).length } catch {} }); p.on('pageerror', (e) => errors.push(e.message)); p.on('console', (m) => m.type() === 'error' && errors.push(m.text()))
+await p.goto('http://localhost:4196/' + file); await p.evaluate(() => document.fonts.ready); await p.waitForTimeout(500)
+const check = () => p.evaluate(() => {
+  const row = document.querySelector('.row.on'), panel = document.getElementById('panel'), shape = document.getElementById('shape'), list = document.getElementById('list')
+  const rt = row.getBoundingClientRect(), pt = panel.getBoundingClientRect(), st = shape.getBoundingClientRect()
+  return { dPanel: Math.round(pt.top - rt.top), dShape: Math.round(st.top - rt.top), tabJoin: Math.round(pt.left - list.getBoundingClientRect().right), panelBelowRow: pt.bottom >= rt.bottom, title: getComputedStyle(panel.querySelector('h2')).fontFamily.split(',')[0], body: getComputedStyle(panel.querySelector('.a')).fontFamily.split(',')[0], rowFont: getComputedStyle(row).fontFamily.split(',')[0] }
+})
+const n = await p.evaluate(() => document.querySelectorAll('.row').length)
+let bad = 0
+for (let i = 0; i < n; i++) { await p.click(`.row[data-i="${i}"]`); await p.waitForTimeout(420); const m = await check(); if (m.dPanel || m.dShape || !m.panelBelowRow) { bad++; console.log('MISALIGNED', i, m) } }
+console.log('rows checked', n, 'misaligned', bad, JSON.stringify(await check()))
+await p.click('.row[data-i="7"]'); await p.waitForTimeout(450); await p.screenshot({ path: out + '/V5-default.png' })
+await p.click('.row[data-i="0"]'); await p.waitForTimeout(450); await p.screenshot({ path: out + '/V5-first.png' })
+// Long thread: 60 rows, select row 47, scroll to it
+await p.evaluate(() => { for (let k = 0; k < 4; k++) QUESTIONS.push(...QUESTIONS.slice(0, 12)); buildList(); render() })
+await p.click('.row[data-i="0"]'); await p.waitForTimeout(200)
+let bad2 = 0; const n2 = await p.evaluate(() => document.querySelectorAll('.row').length)
+for (const i of [13, 29, 47, 59]) { await p.click(`.row[data-i="${i}"]`); await p.waitForTimeout(420); const m = await check(); if (m.dPanel || m.dShape || !m.panelBelowRow) { bad2++; console.log('LONG MISALIGNED', i, m) } }
+await p.click('.row[data-i="47"]'); await p.waitForTimeout(420)
+await p.evaluate(() => document.querySelector('.row.on').scrollIntoView({ block: 'center' })); await p.waitForTimeout(200)
+await p.screenshot({ path: out + '/V5-long.png' })
+console.log('bytes', JSON.stringify(bytes), 'total', Object.values(bytes).reduce((a, b) => a + b, 0)); console.log('long rows', n2, 'misaligned', bad2, 'errors', errors.length, errors.slice(0, 3))
+await p.setViewportSize({ width: 390, height: 844 }); await p.waitForTimeout(300)
+console.log('mobile overflow', await p.evaluate(() => document.documentElement.scrollWidth > innerWidth))
+await p.click('.row[data-i="7"]'); await p.waitForTimeout(300); await p.evaluate(() => document.querySelector('.row.on').scrollIntoView({ block: 'start' })); await p.screenshot({ path: out + '/V5-mobile.png' })
+await b.close()

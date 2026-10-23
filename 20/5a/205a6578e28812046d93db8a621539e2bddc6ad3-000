@@ -1,0 +1,6 @@
+# 23 October 2026: convert GT Sectra LCG Regular (upright and italic) to woff2 for the mockups.
+import sys
+from fontTools.ttLib import TTFont
+src, out = sys.argv[1], sys.argv[2]
+for name in ['GT-Sectra-LCGV-Regular', 'GT-Sectra-LCGV-Regular-Italic']:
+    f = TTFont(f'{src}/{name}.otf'); f.flavor = 'woff2'; f.save(f'{out}/{name}.woff2')
