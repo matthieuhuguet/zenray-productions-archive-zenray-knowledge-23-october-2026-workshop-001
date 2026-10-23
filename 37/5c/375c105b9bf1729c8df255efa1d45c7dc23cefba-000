@@ -1,0 +1,292 @@
+<!doctype html>
+<!-- 23 October 2026 10:55: ZenRay Knowledge, three parametric UI proposals (A Thread, B Oracle, C Library). Every visual value lives in :root; the panel writes only CSS variables. -->
+<!-- FR : ZenRay Knowledge, trois propositions d'interface. Toute valeur visuelle vit dans :root ; le panneau n'écrit que des variables CSS. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZenRay Knowledge</title>
+<style>
+@font-face { font-family: 'InterVariable'; src: url('fonts/InterVariable.woff2') format('woff2'); font-weight: 100 900; }
+@font-face { font-family: 'GT Sectra LCG'; src: url('fonts/GT-Sectra-LCGV-Regular.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'GT Sectra LCG'; src: url('fonts/GT-Sectra-LCGV-Regular-Italic.woff2') format('woff2'); font-style: italic; font-weight: 400; }
+@font-face { font-family: 'AnthropicSerif'; src: url('fonts/AnthropicSerif-Romans.woff2') format('woff2'); font-weight: 300 800; }
+@font-face { font-family: 'AnthropicSerif'; src: url('fonts/AnthropicSerif-Italics.woff2') format('woff2'); font-style: italic; font-weight: 300 800; }
+:root {
+  /* FONTS (Typography1.md, 21 October 2026: body and numbers Serif 400, UI Inter, no Light) */
+  --zr-police-sans: 'InterVariable', 'Hiragino Sans W4', 'Hiragino Sans', sans-serif;
+  --zr-police-serif: 'AnthropicSerif', 'Hiragino Mincho ProN W3', serif;
+  /* 23 October 2026: titles and numbers = GT Sectra LCG OR Anthropic Serif; body stays Anthropic Serif Regular */
+  --zr-police-titres: 'GT Sectra LCG', var(--zr-police-serif); --zr-style-titres: normal;
+  --zr-poids-sans: 500; --zr-poids-serif: 400; --zr-poids-nombres: 400;
+  /* LAYOUT */
+  --rail-w: 210px; --page-pad: 36px; --col-max: 760px; --radius: 14px; --gap: 14px;
+  /* TYPE */
+  --ui-size: 13.5px; --q-size: 17px; --a-size: 15px; --hero-size: 34px;
+  /* COLOUR */
+  --accent-h: 18; --accent-s: 62%; --glass: 0.74; --blur: 26px;
+  /* ANSWER BUDGET: max paragraphs shown before "lire la suite" */
+  --answer-lines: 5;
+  /* Derived, never edited directly */
+  --accent: hsl(var(--accent-h) var(--accent-s) 56%);
+  --accent-soft: hsl(var(--accent-h) var(--accent-s) 56% / .13);
+  --bg: #eef0f3; --surface: rgb(255 255 255 / var(--glass)); --ink: #16171a; --ink-2: #6b6f76; --ink-3: #a3a7ae; --line: rgb(0 0 0 / .07);
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #111214; --surface: rgb(30 31 34 / var(--glass)); --ink: #f2f2f3; --ink-2: #a0a3a9; --ink-3: #6a6d73; --line: rgb(255 255 255 / .08); } }
+:root[data-theme="dark"] { --bg: #111214; --surface: rgb(30 31 34 / var(--glass)); --ink: #f2f2f3; --ink-2: #a0a3a9; --ink-3: #6a6d73; --line: rgb(255 255 255 / .08); }
+
+* { box-sizing: border-box; margin: 0; }
+body { background: var(--bg); color: var(--ink); font-family: var(--zr-police-sans); font-weight: var(--zr-poids-sans); font-size: var(--ui-size); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+button, input { font: inherit; color: inherit; background: none; border: 0; }
+button { cursor: pointer; }
+.num { font-style: normal !important; font-family: var(--zr-police-serif) !important; font-weight: var(--zr-poids-nombres); }
+/* Titles: questions, day headers, hero, brand, domain counts */
+.rail .brand i { font-style: normal; }
+.dom .n { font-family: var(--zr-police-serif) !important; }
+.day b, .hero h1, .rail .brand, .pane .q, body.q-title .q { font-family: var(--zr-police-titres) !important; font-style: var(--zr-style-titres); font-weight: 400 !important; }
+.serif { font-family: var(--zr-police-serif); font-weight: var(--zr-poids-serif); }
+
+.app { display: grid; grid-template-columns: var(--rail-w) 1fr; min-height: 100vh; }
+.rail { padding: 24px 14px; border-right: 1px solid var(--line); position: sticky; top: 0; height: 100vh; overflow: auto; }
+.rail .brand { font-family: var(--zr-police-serif); font-size: 20px; margin: 0 8px 22px; }
+.rail h6 { font-size: 11px; color: var(--ink-3); margin: 14px 10px 6px; font-weight: var(--zr-poids-sans); letter-spacing: .02em; }
+.rail a { display: flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 8px; color: var(--ink-2); text-decoration: none; }
+.rail a.on { color: var(--ink); background: var(--accent-soft); }
+.rail a .new { margin-left: auto; font-size: 10px; color: var(--accent); }
+main { padding: calc(var(--page-pad) + 40px) var(--page-pad) 80px; min-width: 0; }
+.col { max-width: var(--col-max); margin: 0 auto; }
+
+.switch { position: fixed; top: 12px; left: 50%; transform: translateX(-50%); z-index: 50; display: flex; gap: 4px; padding: 4px; border-radius: 99px; background: var(--surface); backdrop-filter: blur(var(--blur)); -webkit-backdrop-filter: blur(var(--blur)); box-shadow: 0 6px 24px rgb(0 0 0 / .12); }
+.switch button { white-space: nowrap; padding: 7px 14px; border-radius: 99px; color: var(--ink-2); }
+.switch button.on { background: var(--ink); color: var(--bg); }
+.view { display: none; } .view.on { display: block; }
+
+.search { display: flex; align-items: center; gap: 10px; height: 46px; padding: 0 18px; border-radius: 99px; background: var(--surface); border: 1px solid var(--line); color: var(--ink-2); }
+.search input { flex: 1; outline: none; color: var(--ink); }
+.kbd { font-size: 11px; color: var(--ink-3); border: 1px solid var(--line); border-radius: 6px; padding: 2px 6px; }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip { padding: 6px 12px; border-radius: 99px; background: var(--surface); border: 1px solid var(--line); color: var(--ink-2); font-size: 12.5px; }
+.chip.on { background: var(--ink); color: var(--bg); border-color: transparent; }
+.tag { font-size: 11px; padding: 2px 8px; border-radius: 99px; background: var(--accent-soft); color: var(--accent); white-space: nowrap; }
+.meta { color: var(--ink-3); font-size: 12px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; }
+.q { font-family: var(--zr-police-serif); font-weight: var(--zr-poids-serif); font-size: var(--q-size); line-height: 1.35; }
+.a { font-family: var(--zr-police-serif); font-weight: var(--zr-poids-serif); font-size: var(--a-size); line-height: 1.6; color: var(--ink); }
+.a p + p { margin-top: .7em; }
+.clamp { display: -webkit-box; -webkit-line-clamp: var(--answer-lines); -webkit-box-orient: vertical; overflow: hidden; }
+.again { color: var(--accent); font-size: 12px; }
+
+/* A : Thread (chronologie, comme Progress) */
+.day { margin: 30px 0 12px; display: flex; align-items: baseline; gap: 10px; }
+.day b { font-family: var(--zr-police-serif); font-weight: var(--zr-poids-serif); font-size: 22px; }
+.thread { position: relative; padding-left: 22px; }
+.thread::before { content: ''; position: absolute; left: 5px; top: 6px; bottom: 6px; width: 1px; background: var(--line); }
+.item { position: relative; margin-bottom: var(--gap); }
+.item::before { content: ''; position: absolute; left: -21px; top: 22px; width: 9px; height: 9px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
+.item .head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; margin-bottom: 8px; }
+.item details summary { list-style: none; cursor: pointer; color: var(--ink-2); font-size: 12.5px; margin-top: 10px; }
+.item details[open] summary { margin-bottom: 8px; }
+
+/* B : Oracle (on demande, il répond d'abord par la mémoire) */
+.hero { text-align: center; margin: 40px 0 26px; }
+.hero h1 { font-family: var(--zr-police-serif); font-weight: var(--zr-poids-serif); font-size: var(--hero-size); }
+.hero p { color: var(--ink-2); margin-top: 8px; }
+.oracle .search { height: 56px; font-size: 15px; }
+.hit { margin-top: 22px; border-color: var(--accent); }
+.hit .banner { display: flex; gap: 10px; align-items: center; color: var(--accent); font-size: 12.5px; margin-bottom: 10px; }
+.hit .banner .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+.near { margin-top: 26px; }
+.near h3 { font-size: 12px; color: var(--ink-3); font-weight: var(--zr-poids-sans); margin-bottom: 8px; }
+.row { display: flex; gap: 14px; align-items: baseline; padding: 12px 4px; border-top: 1px solid var(--line); }
+.row .q { font-size: 15px; flex: 1; }
+.actions { display: flex; gap: 8px; margin-top: 14px; }
+.btn { padding: 7px 14px; border-radius: 99px; border: 1px solid var(--line); color: var(--ink-2); font-size: 12.5px; }
+.btn.pri { background: var(--ink); color: var(--bg); border-color: transparent; }
+
+/* C : Library (domaines, comme Assets) */
+.lib { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; max-width: 1180px; margin: 0 auto; }
+.domains { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin: 16px 0 22px; }
+.dom { padding: 14px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); text-align: left; }
+.dom.on { border-color: var(--accent); background: var(--accent-soft); }
+.dom .n { font-size: 26px; display: block; }
+.dom .l { color: var(--ink-2); font-size: 12.5px; }
+.bar { height: 3px; border-radius: 3px; background: var(--line); margin-top: 10px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--accent); }
+.list .row { cursor: pointer; padding: 12px 10px; border-radius: 10px; border-top: 0; }
+.list .row.on { background: var(--surface); }
+.pane { position: sticky; top: 60px; align-self: start; }
+.state { display: flex; gap: 6px; margin-top: 16px; }
+.state .btn.on { border-color: var(--accent); color: var(--accent); }
+
+/* Parameters panel (workshop only) */
+.panel { position: fixed; right: 14px; bottom: 14px; width: 250px; padding: 14px; border-radius: 14px; background: var(--surface); backdrop-filter: blur(var(--blur)); -webkit-backdrop-filter: blur(var(--blur)); box-shadow: 0 10px 34px rgb(0 0 0 / .16); z-index: 60; font-size: 12px; }
+.panel label { display: grid; grid-template-columns: 1fr 44px; gap: 6px; align-items: center; margin-top: 8px; color: var(--ink-2); }
+.panel input[type=range] { grid-column: 1 / -1; accent-color: var(--accent); }
+.panel .top { display: flex; justify-content: space-between; align-items: center; }
+.panel select { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 3px; color: var(--ink); font: inherit; }
+.panel.min label, .panel.min .copy { display: none; }
+.panel .copy { margin-top: 12px; width: 100%; }
+@media (max-width: 860px) { .app { grid-template-columns: 1fr; } .rail { display: none; } .lib { grid-template-columns: 1fr; } .pane { position: static; } main { padding: 70px 16px 80px; } }
+</style>
+</head>
+<body class="q-title">
+<div class="switch">
+  <button data-v="a" class="on">A · Fil</button>
+  <button data-v="b">B · Oracle</button>
+  <button data-v="c">C · Bibliothèque</button>
+</div>
+
+<div class="app">
+  <nav class="rail">
+    <div class="brand">ZenRay <i>Progress</i></div>
+    <h6>CREATE · Craft</h6>
+    <a>Create</a><a>Progress</a><a>Assets</a><a>Plan</a>
+    <a class="on">Knowledge <span class="new">nouveau</span></a>
+    <a>Sport</a><a>Money</a><a>PostKit</a><a>Media</a><a>Notes</a>
+    <h6>Learn</h6><a>Japanese</a>
+  </nav>
+
+  <main>
+    <!-- A : Fil -->
+    <section class="view on" id="v-a"><div class="col">
+      <div class="search">⌕ <input placeholder="Chercher dans 742 questions…"><span class="kbd">⌘K</span></div>
+      <div class="chips" style="margin-top:12px">
+        <span class="chip on">Tout</span><span class="chip">Tech</span><span class="chip">Houdini</span><span class="chip">Japonais</span><span class="chip">Business</span><span class="chip">Santé</span><span class="chip">Monde</span>
+      </div>
+
+      <div class="day"><b>22 October</b><span class="meta">2026 · <span class="num">3</span> questions</span></div>
+      <div class="thread">
+        <div class="item card">
+          <div class="head"><span class="meta"><span class="num">18:13</span> · Claude · zenray-uv</span><span class="tag">Houdini</span></div>
+          <div class="q">Si je change le scale de l'arche, même si la texel density reste la même, les UV changent-elles ?</div>
+          <details><summary>Réponse · <span class="num">2</span> paragraphes</summary>
+            <div class="a"><p>Les coordonnées UV elles-mêmes ne bougent pas quand on change l'échelle de l'objet, puisqu'elles sont attachées aux points et non à leur taille dans le monde.</p><p>Ce qui change, c'est la densité réelle : une même île couvre alors plus de centimètres pour le même nombre de pixels, si bien qu'il faut soit relancer le layout, soit compenser par la taille de la texture.</p></div>
+          </details>
+        </div>
+        <div class="item card">
+          <div class="head"><span class="meta"><span class="num">18:41</span> · Claude · Memory1</span><span class="tag">Tech</span></div>
+          <div class="q">Pourquoi .zr-archive-work pèse-t-il 121 Go sur 2 To ?</div>
+          <details><summary>Réponse · <span class="num">1</span> paragraphe</summary><div class="a"><p>Le dossier <code>.zr-archive-work</code> pèse 121 Go : ce sont les copies de travail des envois vers le drive, qu'on peut purger une fois la preuve cloud verte.</p></div></details>
+        </div>
+      </div>
+
+      <div class="day"><b>20 August</b><span class="meta">2026 · <span class="num">1</span> question</span></div>
+      <div class="thread">
+        <div class="item card">
+          <div class="head"><span class="meta"><span class="num">08:27</span> · Claude · ZenRayProgress</span><span class="tag">Tech</span></div>
+          <div class="q">C'est quoi, du coup, les Cloudflare rules ?</div>
+          <div class="again" style="margin-top:6px">↻ posée <span class="num">2</span> fois · dernière le 20 August 2026</div>
+          <details open><summary>Réponse · <span class="num">2</span> paragraphes</summary>
+            <div class="a clamp"><p>Ce sont des règles que Cloudflare applique avant même que la requête n'atteigne le site : rediriger une adresse, réécrire un en-tête, mettre en cache plus longtemps ou bloquer un pays.</p><p>On les règle dans le tableau de bord de la zone, sans toucher au code, ce qui en fait le bon endroit pour une politique de cache ou une redirection permanente.</p></div>
+          </details>
+        </div>
+      </div>
+    </div></section>
+
+    <!-- B : Oracle -->
+    <section class="view oracle" id="v-b"><div class="col">
+      <div class="hero"><h1>Que veux-tu savoir ?</h1><p>Avant de répondre, ZenRay cherche si tu l'as déjà demandé.</p></div>
+      <div class="search">⌕ <input value="comment exporter une image de DaVinci"><span class="kbd">↵</span></div>
+
+      <div class="card hit">
+        <div class="banner"><span class="dot"></span>Tu as déjà posé cette question le 4 June 2026 à <span class="num">19:15</span></div>
+        <div class="q">Comment j'exporte une frame dans DaVinci vers le dossier Frames_ZenRayProgress ?</div>
+        <div class="a" style="margin-top:12px"><p>Dans la page Color, clic droit sur la vignette du plan, puis « Grab Still » ; dans la Gallery, clic droit sur l'image et « Export », en choisissant PNG et le dossier voulu.</p></div>
+        <div class="actions"><button class="btn pri">Ça me suffit</button><button class="btn">Je ne m'en souvenais pas</button><button class="btn">Nouvelle réponse</button></div>
+      </div>
+
+      <div class="near">
+        <h3>Questions voisines</h3>
+        <div class="row"><span class="q">Comment je peux le faire sur DaVinci ?</span><span class="meta">2 June 2026</span></div>
+        <div class="row"><span class="q">Pourquoi utiliser OBS et pas directement la capture macOS ?</span><span class="meta">24 September 2026</span></div>
+        <div class="row"><span class="q">Quelle est la résolution et le format des miniatures ?</span><span class="meta">30 June 2026</span></div>
+      </div>
+    </div></section>
+
+    <!-- C : Bibliothèque -->
+    <section class="view" id="v-c">
+      <div style="max-width:1180px;margin:0 auto">
+        <div class="search">⌕ <input placeholder="Chercher une question…"><span class="kbd">⌘K</span></div>
+        <div class="domains">
+          <button class="dom on"><span class="n num">214</span><span class="l">Tech et drive</span><div class="bar"><i style="width:38%"></i></div></button>
+          <button class="dom"><span class="n num">131</span><span class="l">Houdini et 3D</span><div class="bar"><i style="width:22%"></i></div></button>
+          <button class="dom"><span class="n num">96</span><span class="l">Japonais</span><div class="bar"><i style="width:51%"></i></div></button>
+          <button class="dom"><span class="n num">58</span><span class="l">Business</span><div class="bar"><i style="width:12%"></i></div></button>
+          <button class="dom"><span class="n num">33</span><span class="l">Santé et sport</span><div class="bar"><i style="width:30%"></i></div></button>
+          <button class="dom"><span class="n num">19</span><span class="l">Monde</span><div class="bar"><i style="width:5%"></i></div></button>
+        </div>
+      </div>
+      <div class="lib">
+        <div class="list">
+          <div class="row on"><span class="q">C'est quoi les Cloudflare rules ?</span><span class="meta">×<span class="num">2</span></span></div>
+          <div class="row"><span class="q">Combien de pushes par minute GitHub accepte-t-il ?</span><span class="meta">13 Oct</span></div>
+          <div class="row"><span class="q">Pourquoi le channel extract ne prend que la moitié du canal ?</span><span class="meta">18 Sep</span></div>
+          <div class="row"><span class="q">Le tampon se décharge-t-il seul sur GitHub ?</span><span class="meta">2 Oct</span></div>
+          <div class="row"><span class="q">Les miniatures sont-elles servies par jsDelivr ?</span><span class="meta">30 Jun</span></div>
+        </div>
+        <div class="pane card">
+          <span class="tag">Tech et drive</span>
+          <div class="q" style="margin-top:12px;font-size:22px">C'est quoi les Cloudflare rules ?</div>
+          <div class="meta" style="margin-top:6px">Posée le 20 August 2026 à <span class="num">08:27</span>, deux fois · source : transcript Claude, ZenRayProgress</div>
+          <div class="a" style="margin-top:16px"><p>Ce sont des règles que Cloudflare applique avant que la requête n'atteigne le site : redirection, réécriture d'en-tête, cache prolongé, blocage.</p><p>Elles se règlent dans le tableau de bord de la zone, sans toucher au code.</p></div>
+          <div class="state"><button class="btn on">À revoir</button><button class="btn">Je sais</button><button class="btn">Ouvrir la conversation</button></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="panel min" id="panel">
+  <div class="top"><b>Paramètres</b><button id="min">–</button></div>
+  <label style="grid-template-columns:1fr 1fr">Titres<select id="fam"><option value="sectra">GT Sectra LCG</option><option value="anthropic">Anthropic Serif</option></select></label>
+  <label style="grid-template-columns:1fr 1fr">Questions<select id="qt"><option value="title">Comme titres</option><option value="body">Comme corps</option></select></label>
+  <div id="sliders"></div>
+  <button class="btn pri copy" id="copy">Copier les valeurs pour le prompt</button>
+</div>
+
+<script>
+// 23 October 2026 10:55: sliders write only :root variables (HDA interface, 8 max).
+const PARAMS = [
+  ['--col-max', 560, 1000, 10, 'px', 'Largeur de colonne'],
+  ['--q-size', 14, 26, .5, 'px', 'Taille question'],
+  ['--a-size', 13, 20, .5, 'px', 'Taille réponse'],
+  ['--answer-lines', 2, 12, 1, '', 'Lignes de réponse visibles'],
+  ['--radius', 0, 28, 1, 'px', 'Arrondi'],
+  ['--gap', 4, 32, 1, 'px', 'Espace entre cartes'],
+  ['--accent-h', 0, 360, 1, '', 'Teinte accent'],
+  ['--glass', .3, 1, .01, '', 'Opacité verre'],
+]
+const root = document.documentElement, box = document.getElementById('sliders')
+for (const [v, min, max, step, unit, label] of PARAMS) {
+  const cur = parseFloat(getComputedStyle(root).getPropertyValue(v))
+  const l = document.createElement('label')
+  l.innerHTML = `${label}<span class="num">${cur}</span><input type="range" min="${min}" max="${max}" step="${step}" value="${cur}">`
+  l.querySelector('input').oninput = (e) => { root.style.setProperty(v, e.target.value + unit); l.querySelector('span').textContent = e.target.value }
+  box.appendChild(l)
+}
+// 23 October 2026 13:40: titles GT Sectra LCG Regular upright, numbers always Anthropic Serif (wrapped automatically), body Anthropic.
+const FAMILIES = { sectra: "'GT Sectra LCG', var(--zr-police-serif)", anthropic: 'var(--zr-police-serif)' }
+const fam = document.getElementById('fam'), qt = document.getElementById('qt')
+const applyType = () => { root.style.setProperty('--zr-police-titres', FAMILIES[fam.value]); root.style.setProperty('--zr-style-titres', 'normal'); document.body.classList.toggle('q-title', qt.value === 'title') }
+fam.onchange = qt.onchange = applyType
+applyType()
+// Wrap every digit run inside a title in .num, so "22 October" mixes Anthropic (22) and Sectra (October).
+for (const el of document.querySelectorAll('.q, .day b, .hero h1')) {
+  const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), nodes = []
+  while (walker.nextNode()) if (/\d/.test(walker.currentNode.nodeValue) && !walker.currentNode.parentElement.closest('.num')) nodes.push(walker.currentNode)
+  for (const n of nodes) { const span = document.createElement('span'); span.innerHTML = n.nodeValue.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[c]).replace(/(\d[\d:.,]*)/g, '<span class="num">$1</span>'); n.replaceWith(...span.childNodes) }
+}
+document.getElementById('copy').onclick = () => {
+  const view = document.querySelector('.switch .on').textContent.trim()
+  const vals = PARAMS.map(([v]) => `${v}: ${getComputedStyle(root).getPropertyValue(v).trim()}`).join('; ') + `; titres: ${fam.selectedOptions[0].text}; questions: ${qt.selectedOptions[0].text}; chiffres: Anthropic Serif`
+  navigator.clipboard.writeText(`Knowledge design ${view} ; ${vals}`)
+}
+document.getElementById('min').onclick = () => document.getElementById('panel').classList.toggle('min')
+document.querySelectorAll('.switch button').forEach((b) => b.onclick = () => {
+  document.querySelectorAll('.switch button').forEach((x) => x.classList.toggle('on', x === b))
+  document.querySelectorAll('.view').forEach((s) => s.classList.toggle('on', s.id === 'v-' + b.dataset.v))
+})
+document.querySelectorAll('.list .row').forEach((r) => r.onclick = () => document.querySelectorAll('.list .row').forEach((x) => x.classList.toggle('on', x === r)))
+</script>
+</body>
+</html>

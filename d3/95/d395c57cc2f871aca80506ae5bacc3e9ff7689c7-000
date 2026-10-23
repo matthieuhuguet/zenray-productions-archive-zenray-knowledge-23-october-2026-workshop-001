@@ -1,0 +1,200 @@
+<!doctype html>
+<!-- 23 October 2026 14:40: ZenRay Knowledge V5, B2 folder tab in Liquid Glass. The selected question and its answer are ONE glass shape, top-aligned on the question, whatever the thread length. -->
+<!-- FR : V5. L'onglet et la réponse forment une seule forme de verre, calée en haut sur la question choisie ; fond = wallpaper de Create. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<link rel="preload" href="fonts/GT-Sectra-LCGV-Regular-latin.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZenRay Knowledge</title>
+<style>
+/* 23 October 2026 optimisation: Latin subsets pinned to the one weight used (Inter 500, Anthropic Serif 400); Japanese falls back to Hiragino. */
+@font-face { font-family: 'InterVariable'; src: url('fonts/InterVariable-latin-500.woff2') format('woff2'); font-weight: 500; font-display: swap; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'AnthropicSerif'; src: url('fonts/AnthropicSerif-Romans-latin-400.woff2') format('woff2'); font-weight: 400; font-display: swap; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'GT Sectra LCG'; src: url('fonts/GT-Sectra-LCGV-Regular-latin.woff2') format('woff2'); font-weight: 400; font-display: swap; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+:root {
+  /* FONTS (Typography1.md, 23 October 2026): titles GT Sectra LCG normal, numbers and body Anthropic Serif, UI Inter */
+  --zr-police-sans: 'InterVariable', 'Hiragino Sans W4', sans-serif;
+  --zr-police-serif: 'AnthropicSerif', 'Hiragino Mincho ProN W3', serif;
+  --zr-police-titres: 'GT Sectra LCG', var(--zr-police-serif);
+  /* LAYOUT */
+  --rail-w: 220px; --list-w: 440px; --col-gap: 28px; --page-max: 1180px; --pad: 44px; --row-pad: 14px; --date-w: 64px;
+  /* TYPE */
+  --ui-size: 13.5px; --row-size: 16px; --title-size: 28px; --answer-size: 16px;
+  /* LIQUID GLASS (reference: skills/zenray-edit/references/liquid-glass/liquid-glass-claude.png) */
+  --lg-radius: 26px; --lg-blur: 22px; --lg-sat: 170%;
+  --lg-tint-top: .20; --lg-tint-bottom: .07; --lg-rim: .60; --lg-veil: .34; --bg-blur: 4px;
+  /* Derived, never edited directly */
+  --lg-fill: linear-gradient(180deg, rgb(255 255 255 / var(--lg-tint-top)), rgb(255 255 255 / var(--lg-tint-bottom)));
+  --lg-filter: blur(var(--lg-blur)) saturate(var(--lg-sat));
+  --lg-edge: inset 0 1px 0 rgb(255 255 255 / var(--lg-rim)), inset 0 0 0 1px rgb(255 255 255 / calc(var(--lg-rim) * .3));
+  --lg-shadow: 0 24px 60px rgb(0 0 0 / .22), 0 4px 14px rgb(0 0 0 / .10);
+  --ink: #fff; --ink-2: rgb(255 255 255 / .72); --ink-3: rgb(255 255 255 / .52); --hover: rgb(255 255 255 / .07);
+  --text-shadow: 0 1px 12px rgb(0 0 0 / .28);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; margin: 0; }
+html { background: #2a2f36; }
+body { color: var(--ink); font-family: var(--zr-police-sans); font-weight: 500; font-size: var(--ui-size); -webkit-font-smoothing: antialiased; overflow-x: hidden; min-height: 100vh; isolation: isolate; text-shadow: var(--text-shadow); }
+/* Wallpaper of Create, behind everything: a sibling layer, never an ancestor of the glass (SilentBugs1.md) */
+body::before { content: ''; position: fixed; inset: -4%; z-index: -2; background: url('wallpaper.webp') center / cover no-repeat; background-image: image-set(url('wallpaper-1280.avif') type('image/avif'), url('wallpaper.webp') type('image/webp')); filter: blur(var(--bg-blur)); }
+body::after { content: ''; position: fixed; inset: 0; z-index: -1; background: linear-gradient(180deg, rgb(10 12 16 / calc(var(--lg-veil) * .7)), rgb(10 12 16 / var(--lg-veil))); }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; text-align: left; text-shadow: inherit; }
+.title { font-family: var(--zr-police-titres); font-weight: 400; font-style: normal; }
+.body { font-family: var(--zr-police-serif); font-weight: 400; }
+.num { font-family: var(--zr-police-serif) !important; font-weight: 400; font-style: normal; }
+/* Standalone glass (rail, parameters, mobile panel) */
+.lg { background: var(--lg-fill); backdrop-filter: var(--lg-filter); -webkit-backdrop-filter: var(--lg-filter); box-shadow: var(--lg-edge), var(--lg-shadow); border-radius: var(--lg-radius); }
+
+.app { display: grid; grid-template-columns: var(--rail-w) 1fr; gap: 0; min-height: 100vh; padding: 14px; }
+.rail { position: sticky; top: 14px; height: calc(100vh - 28px); padding: 22px 12px; }
+.rail .brand { font-size: 20px; margin: 0 10px 22px; }
+.rail a { display: block; padding: 7px 12px; border-radius: 12px; color: var(--ink-2); }
+.rail a.on { color: var(--ink); background: rgb(255 255 255 / .16); box-shadow: inset 0 1px 0 rgb(255 255 255 / .35); }
+main { padding: 48px var(--pad) 80px; min-width: 0; }
+.wrap { position: relative; max-width: var(--page-max); margin: 0 auto; }
+
+/* Left list: every question starts on the same edge, the date column is fixed */
+.list { width: var(--list-w); position: relative; z-index: 2; }
+.row { display: grid; grid-template-columns: var(--date-w) 1fr; gap: 14px; align-items: baseline; width: 100%; padding: var(--row-pad); border-radius: 16px; font-size: var(--row-size); line-height: 1.4; transition: background-color .25s cubic-bezier(.16,1,.3,1); }
+.row:hover:not(.on) { background: var(--hover); }
+.row .d { color: var(--ink-3); font-size: 13px; }
+
+/* ONE glass shape = selected row tab + answer panel (clip-path path computed in JS) */
+.shape { position: absolute; z-index: 1; pointer-events: none; background: var(--lg-fill); backdrop-filter: var(--lg-filter); -webkit-backdrop-filter: var(--lg-filter); filter: drop-shadow(0 18px 40px rgb(0 0 0 / .18)); transition: top .35s cubic-bezier(.16,1,.3,1), height .35s cubic-bezier(.16,1,.3,1); }
+.rim { position: absolute; z-index: 1; pointer-events: none; overflow: visible; }
+.panel { position: absolute; z-index: 2; padding: calc(var(--row-pad) + 2px) 34px 34px; transition: top .35s cubic-bezier(.16,1,.3,1); }
+.panel .when { color: var(--ink-2); font-size: 13px; margin-bottom: 12px; }
+.panel h2 { font-size: var(--title-size); line-height: 1.2; }
+.panel .a { margin-top: 18px; font-size: var(--answer-size); line-height: 1.65; }
+.panel .a p + p { margin-top: .75em; }
+
+/* Parameters (workshop only, never shipped) */
+.params { position: fixed; right: 18px; bottom: 18px; width: 250px; padding: 12px 16px; font-size: 12px; z-index: 60; border-radius: 18px; }
+.params summary { cursor: pointer; }
+.params label { display: grid; grid-template-columns: 1fr 44px; gap: 4px; margin-top: 8px; color: var(--ink-2); }
+.params input { grid-column: 1 / -1; accent-color: #fff; }
+.params .copy { margin-top: 10px; width: 100%; text-align: center; padding: 8px; border-radius: 99px; background: #fff; color: #16171a; text-shadow: none; }
+
+@media (max-width: 900px) {
+  .app { grid-template-columns: 1fr; padding: 10px; } .rail { display: none; } main { padding: 20px 6px 80px; }
+  .list { width: 100%; } .shape, .rim { display: none; }
+  .panel { position: static; margin: 6px 0 14px; } .panel.lg-mobile { background: var(--lg-fill); backdrop-filter: var(--lg-filter); -webkit-backdrop-filter: var(--lg-filter); box-shadow: var(--lg-edge), var(--lg-shadow); border-radius: var(--lg-radius); }
+  .row.on { background: rgb(255 255 255 / .16); }
+}
+@media (prefers-reduced-motion: reduce) { .shape, .panel, .row { transition: none; } }
+</style>
+</head>
+<body>
+<div class="app">
+  <nav class="rail lg">
+    <div class="brand title">ZenRay Progress</div>
+    <a>Create</a><a>Progress</a><a>Assets</a><a>Plan</a><a class="on">Knowledge</a><a>Sport</a><a>Money</a><a>Notes</a>
+  </nav>
+  <main><div class="wrap" id="wrap">
+    <div class="shape" id="shape"></div>
+    <svg class="rim" id="rim" aria-hidden="true"><defs><linearGradient id="rimGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".62"/><stop offset=".35" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity=".12"/></linearGradient></defs><path id="rimPath" fill="none" stroke="url(#rimGrad)" stroke-width="1"/></svg>
+    <div class="list" id="list"></div>
+    <article class="panel lg-mobile" id="panel"></article>
+  </div></main>
+</div>
+
+<details class="params lg">
+  <summary>Paramètres</summary>
+  <div id="sliders"></div>
+  <button class="copy" id="copy">Copier les valeurs pour le prompt</button>
+</details>
+
+<script>
+// 23 October 2026 14:40: one data set; the glass shape is recomputed from the selected row and the panel size.
+const QUESTIONS = [
+  { day: '22 October 2026', short: '22 Oct', time: '18:13', asked: 1, q: "Si je change le scale de l'arche, à texel density égale, les UV changent-elles ?",
+    a: ["Les coordonnées UV ne bougent pas quand on change l'échelle de l'objet, puisqu'elles sont attachées aux points et non à leur taille dans le monde.", "Ce qui change, c'est la densité réelle : une même île couvre plus de centimètres pour le même nombre de pixels, donc il faut relancer le layout ou compenser par la taille de la texture."] },
+  { day: '22 October 2026', short: '22 Oct', time: '18:41', asked: 1, q: 'Pourquoi .zr-archive-work pèse-t-il 121 Go ?',
+    a: ["Ce dossier garde les copies de travail des envois vers le drive ; on peut le purger une fois la preuve cloud verte."] },
+  { day: '21 October 2026', short: '21 Oct', time: '13:35', asked: 1, q: 'Comment mesurer une UV : par rapport à la plus grande surface ?',
+    a: ["On compare les UV réellement écrites à la référence, île par île, et on rapporte l'écart à l'aire totale plutôt qu'à la plus grande surface, sinon les petites îles ne pèsent rien dans le score."] },
+  { day: '13 October 2026', short: '13 Oct', time: '22:20', asked: 1, q: 'Combien de pushes par minute GitHub accepte-t-il ?',
+    a: ["GitHub recommande au plus 6 pushes par minute et par dépôt ; avec des lots de 1 900 Mio, on en fait un toutes les 3 minutes, très loin de cette limite."] },
+  { day: '2 October 2026', short: '2 Oct', time: '12:29', asked: 1, q: 'Le tampon se décharge-t-il seul sur GitHub ?',
+    a: ["Oui : le worker pousse chaque lot dès qu'il est prêt, puis supprime la copie locale seulement après la preuve que le dépôt contient bien les parts."] },
+  { day: '24 September 2026', short: '24 Sep', time: '02:25', asked: 1, q: 'Pourquoi OBS plutôt que la capture macOS ?',
+    a: ["La capture macOS suffit pour un écran ; OBS ne sert que pour mélanger plusieurs sources, une caméra ou des scènes, au prix d'une configuration plus lourde."] },
+  { day: '18 September 2026', short: '18 Sep', time: '10:07', asked: 2, q: 'Pourquoi le channel extract ne prend-il que la moitié du canal ?',
+    a: ["Le plus souvent la source est en 16 bits demi-flottant ou normalisée sur une autre plage : le nœud lit la bonne couche mais la remappe, et il faut régler la plage d'entrée plutôt que le canal."] },
+  { day: '20 August 2026', short: '20 Aug', time: '08:27', asked: 2, q: "C'est quoi les Cloudflare rules ?",
+    a: ["Ce sont des règles que Cloudflare applique avant que la requête n'atteigne le site : redirection, réécriture d'en-tête, cache prolongé, blocage.", "Elles se règlent dans le tableau de bord de la zone, sans toucher au code."] },
+  { day: '8 July 2026', short: '8 Jul', time: '14:28', asked: 1, q: 'しぬな, c\'est quel vocabulaire ?',
+    a: ["C'est 死ぬ (mourir) suivi de な, l'impératif négatif familier : « ne meurs pas ». La forme se construit sur le dictionnaire du verbe, on la verra avec les impératifs."] },
+  { day: '30 June 2026', short: '30 Jun', time: '17:03', asked: 2, q: 'Les miniatures sont-elles servies par jsDelivr, et dans quel format ?',
+    a: ["Oui, par une URL jsDelivr épinglée sur un commit ; ce sont des images compressées de petite taille, jamais l'original."] },
+  { day: '4 June 2026', short: '4 Jun', time: '19:15', asked: 2, q: 'Comment exporter une image de DaVinci ?',
+    a: ["Dans la page Color, clic droit sur la vignette du plan puis « Grab Still » ; dans la Gallery, clic droit sur l'image, « Export », format PNG."] },
+  { day: '26 May 2026', short: '26 May', time: '00:18', asked: 1, q: 'Comment apprendre le sound design peu à peu ?',
+    a: ["En recréant chaque jour un son court qui existe déjà, à l'oreille, puis en comparant : une seule technique à la fois, et le résultat gardé dans un dossier daté."] },
+]
+const PARAMS = [
+  ['--list-w', 340, 600, 10, 'px', 'Largeur liste'], ['--lg-blur', 0, 48, 1, 'px', 'Flou du verre'],
+  ['--lg-tint-top', 0, .5, .01, '', 'Teinte haut'], ['--lg-tint-bottom', 0, .4, .01, '', 'Teinte bas'],
+  ['--lg-rim', 0, 1, .01, '', 'Liseré'], ['--lg-veil', 0, .7, .01, '', 'Voile du fond'],
+  ['--bg-blur', 0, 30, 1, 'px', 'Flou du fond'], ['--lg-radius', 8, 40, 1, 'px', 'Arrondi'],
+]
+const $ = (id) => document.getElementById(id), root = document.documentElement
+const wrap = $('wrap'), list = $('list'), panel = $('panel'), shape = $('shape'), rim = $('rim'), rimPath = $('rimPath')
+let current = 7
+const esc = (t) => t.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[c]).replace(/ ([?!:;])/g, '\u202f$1')
+const nums = (t) => esc(t).replace(/(\d[\d:.,]*)/g, '<span class="num">$1</span>')
+const cssPx = (v) => parseFloat(getComputedStyle(root).getPropertyValue(v))
+
+// Tab + panel outline. Top edge is continuous because the panel top equals the row top (never misaligned).
+function outline(w, rowH, tabW, h, R, r, f) {
+  return `M ${r} 0 H ${w - R} A ${R} ${R} 0 0 1 ${w} ${R} V ${h - R} A ${R} ${R} 0 0 1 ${w - R} ${h} H ${tabW + R} A ${R} ${R} 0 0 1 ${tabW} ${h - R} V ${rowH + f} A ${f} ${f} 0 0 0 ${tabW - f} ${rowH} H ${r} A ${r} ${r} 0 0 1 0 ${rowH - r} V ${r} A ${r} ${r} 0 0 1 ${r} 0 Z`
+}
+
+function layout() {
+  const row = list.children[current]
+  // Narrow screens: single column, the shape is hidden, so every inline geometry is cleared (else a stale desktop width overflows).
+  // Narrow screens: the answer opens right under its question, so it stays linked on a long thread too.
+  if (!row || getComputedStyle(shape).display === 'none') { wrap.style.minHeight = ''; panel.removeAttribute('style'); if (row && panel.previousElementSibling !== row) row.after(panel); return }
+  if (panel.parentElement !== wrap) wrap.appendChild(panel)
+  const gap = cssPx('--col-gap'), R = cssPx('--lg-radius'), r = Math.min(16, R), f = Math.min(14, R)
+  const listW = list.offsetWidth, tabW = listW + gap, w = wrap.clientWidth, top = row.offsetTop, rowH = row.offsetHeight
+  panel.style.left = tabW + 'px'; panel.style.width = (w - tabW) + 'px'; panel.style.top = top + 'px'
+  panel.style.minHeight = (rowH + R + f) + 'px'
+  const h = panel.offsetHeight
+  const d = outline(w, rowH, tabW, h, R, r, f)
+  Object.assign(shape.style, { top: top + 'px', left: 0, width: w + 'px', height: h + 'px', clipPath: `path('${d}')` })
+  rim.setAttribute('width', w); rim.setAttribute('height', h); rim.setAttribute('viewBox', `0 0 ${w} ${h}`)
+  rim.style.top = top + 'px'; rim.style.left = 0; rimPath.setAttribute('d', d)
+  wrap.style.minHeight = Math.max(list.offsetHeight, top + h) + 'px'
+}
+
+function buildList() {
+  if (panel.parentElement === list) wrap.appendChild(panel) // never wipe the answer with the list
+  list.innerHTML = QUESTIONS.map((x, i) => `<button class="row body" data-i="${i}"><span class="d num">${x.short}</span><span>${esc(x.q)}</span></button>`).join('')
+}
+function render() {
+  list.querySelector('.row.on')?.classList.remove('on'); list.children[current]?.classList.add('on')
+  const x = QUESTIONS[current]
+  const when = x.asked > 1 ? `Posée ${x.asked} fois, dernière le ${x.day} à ${x.time}` : `Posée le ${x.day} à ${x.time}`
+  panel.innerHTML = `<div class="when">${nums(when)}</div><h2 class="title">${nums(x.q)}</h2><div class="a body">${x.a.map((p) => `<p>${nums(p)}</p>`).join('')}</div>`
+  layout()
+}
+list.addEventListener('click', (e) => { const b = e.target.closest('.row'); if (b && +b.dataset.i !== current) { current = +b.dataset.i; render() } })
+let raf = 0
+new ResizeObserver(() => { cancelAnimationFrame(raf); raf = requestAnimationFrame(layout) }).observe(wrap)
+document.fonts.ready.then(layout)
+
+const box = $('sliders')
+for (const [v, min, max, step, unit, label] of PARAMS) {
+  const cur = cssPx(v), l = document.createElement('label')
+  l.innerHTML = `${label}<span class="num">${cur}</span><input type="range" min="${min}" max="${max}" step="${step}" value="${cur}">`
+  l.querySelector('input').oninput = (e) => { root.style.setProperty(v, e.target.value + unit); l.querySelector('span').textContent = e.target.value; layout() }
+  box.appendChild(l)
+}
+$('copy').onclick = () => navigator.clipboard.writeText('Knowledge V5 Liquid Glass ; ' + PARAMS.map(([v]) => `${v}: ${getComputedStyle(root).getPropertyValue(v).trim()}`).join('; '))
+buildList()
+render()
+</script>
+</body>
+</html>

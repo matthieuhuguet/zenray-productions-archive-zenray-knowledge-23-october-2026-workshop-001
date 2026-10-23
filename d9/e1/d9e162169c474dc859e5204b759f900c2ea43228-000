@@ -1,0 +1,162 @@
+<!doctype html>
+<!-- 23 October 2026 14:05: ZenRay Knowledge V2, three lean proposals (thread + library): question list on the left, outlined answer on the right. -->
+<!-- FR : V2 épurée. Titres en GT Sectra (texte ou Display), chiffres et corps en Anthropic Serif. Toute valeur visuelle vit dans :root. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZenRay Knowledge</title>
+<style>
+@font-face { font-family: 'InterVariable'; src: url('fonts/InterVariable.woff2') format('woff2'); font-weight: 100 900; }
+@font-face { font-family: 'AnthropicSerif'; src: url('fonts/AnthropicSerif-Romans.woff2') format('woff2'); font-weight: 300 800; }
+@font-face { font-family: 'GT Sectra LCG'; src: url('fonts/GT-Sectra-LCGV-Regular.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'GT Sectra LCG Display'; src: url('fonts/GT-Sectra-LCGV-Display-Regular.woff2') format('woff2'); font-weight: 400; }
+:root {
+  /* FONTS (Typography1.md, 23 October 2026 13:50): titles Sectra upright, numbers and body Anthropic Serif */
+  --zr-police-sans: 'InterVariable', 'Hiragino Sans W4', sans-serif;
+  --zr-police-serif: 'AnthropicSerif', 'Hiragino Mincho ProN W3', serif;
+  --zr-police-titres: 'GT Sectra LCG', var(--zr-police-serif);
+  /* LAYOUT */
+  --rail-w: 210px; --list-w: 460px; --col-gap: 40px; --page-max: 1180px; --pad: 48px; --row-pad: 12px; --radius: 14px;
+  /* TYPE */
+  --ui-size: 13.5px; --row-size: 16px; --group-size: 22px; --title-size: 28px; --answer-size: 16px; --date-w: 72px;
+  /* COLOUR */
+  --accent-h: 18;
+  --accent: hsl(var(--accent-h) 62% 56%);
+  --bg: #eef0f3; --panel: #fff; --ink: #16171a; --ink-2: #6b6f76; --ink-3: #a3a7ae; --line: rgb(0 0 0 / .08); --select: rgb(0 0 0 / .045);
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #111214; --panel: #191a1d; --ink: #f2f2f3; --ink-2: #a0a3a9; --ink-3: #6a6d73; --line: rgb(255 255 255 / .1); --select: rgb(255 255 255 / .06); } }
+:root[data-theme="dark"] { --bg: #111214; --panel: #191a1d; --ink: #f2f2f3; --ink-2: #a0a3a9; --ink-3: #6a6d73; --line: rgb(255 255 255 / .1); --select: rgb(255 255 255 / .06); }
+
+* { box-sizing: border-box; margin: 0; }
+body { background: var(--bg); color: var(--ink); font-family: var(--zr-police-sans); font-weight: 500; font-size: var(--ui-size); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+button, input, select { font: inherit; color: inherit; background: none; border: 0; }
+button { cursor: pointer; text-align: left; }
+.title { font-family: var(--zr-police-titres); font-weight: 400; font-style: normal; }
+.body { font-family: var(--zr-police-serif); font-weight: 400; }
+.num { font-family: var(--zr-police-serif) !important; font-weight: 400; font-style: normal; }
+
+.app { display: grid; grid-template-columns: var(--rail-w) 1fr; min-height: 100vh; }
+.rail { padding: 24px 14px; border-right: 1px solid var(--line); position: sticky; top: 0; height: 100vh; }
+.rail .brand { font-size: 20px; margin: 0 10px 22px; }
+.rail a { display: block; padding: 6px 10px; border-radius: 8px; color: var(--ink-2); }
+.rail a.on { color: var(--ink); background: var(--select); }
+main { padding: 76px var(--pad) 80px; min-width: 0; }
+.wrap { max-width: var(--page-max); margin: 0 auto; display: grid; grid-template-columns: var(--list-w) 1fr; gap: var(--col-gap); align-items: start; }
+
+/* Top switches: proposal and Sectra cut */
+.top { position: fixed; top: 12px; left: calc(50% + var(--rail-w) / 2); transform: translateX(-50%); z-index: 50; display: flex; gap: 10px; }
+.seg { display: flex; gap: 2px; padding: 3px; border-radius: 99px; background: var(--panel); box-shadow: 0 4px 18px rgb(0 0 0 / .1); }
+.seg button { padding: 6px 13px; border-radius: 99px; color: var(--ink-2); white-space: nowrap; }
+.seg button.on { background: var(--ink); color: var(--bg); }
+
+/* Left list: every row starts on the same edge */
+.list { display: flex; flex-direction: column; }
+.group { font-size: var(--group-size); padding: 0 var(--row-pad); margin: 22px 0 6px; }
+.group:first-child { margin-top: 0; }
+.row { display: grid; grid-template-columns: 1fr; gap: 14px; align-items: baseline; padding: var(--row-pad); border-radius: 10px; font-size: var(--row-size); line-height: 1.4; }
+.row:hover { background: var(--select); }
+.row.on { background: var(--panel); box-shadow: 0 1px 0 var(--line); }
+.row .d { color: var(--ink-3); font-size: 13px; }
+[data-layout="b"] .row { grid-template-columns: var(--date-w) 1fr; }
+.search { margin: 0 0 14px; padding: 0 var(--row-pad); height: 42px; border-bottom: 1px solid var(--line); display: flex; align-items: center; }
+.search input { flex: 1; outline: none; font-size: 14px; }
+
+/* Right panel: one outlined rectangle */
+.panel { position: sticky; top: 76px; border: 1px solid var(--line); background: var(--panel); border-radius: var(--radius); padding: 28px 32px; }
+.panel .when { color: var(--ink-3); font-size: 13px; margin-bottom: 10px; }
+.panel h2 { font-size: var(--title-size); line-height: 1.2; }
+.panel .a { margin-top: 18px; font-size: var(--answer-size); line-height: 1.65; }
+.panel .a p + p { margin-top: .75em; }
+
+/* Parameters (workshop only) */
+.params { position: fixed; right: 14px; bottom: 14px; width: 240px; padding: 12px 14px; border-radius: 12px; background: var(--panel); box-shadow: 0 8px 28px rgb(0 0 0 / .14); font-size: 12px; z-index: 60; }
+.params summary { cursor: pointer; }
+.params label { display: grid; grid-template-columns: 1fr 40px; gap: 4px; margin-top: 8px; color: var(--ink-2); }
+.params input { grid-column: 1 / -1; accent-color: var(--accent); }
+.params .copy { margin-top: 10px; width: 100%; text-align: center; padding: 7px; border-radius: 99px; background: var(--ink); color: var(--bg); }
+@media (max-width: 900px) { .app { grid-template-columns: 1fr; } .rail { display: none; } .wrap { grid-template-columns: 1fr; } .panel { position: static; } main { padding: 70px 16px; } .top { left: 50%; } }
+</style>
+</head>
+<body data-layout="a">
+<div class="top">
+  <div class="seg" id="layouts"><button data-l="a" class="on">A</button><button data-l="b">B</button><button data-l="c">C</button></div>
+  <div class="seg" id="cuts"><button data-c="text" class="on">Sectra</button><button data-c="display">Sectra Display</button></div>
+</div>
+
+<div class="app">
+  <nav class="rail">
+    <div class="brand title">ZenRay Progress</div>
+    <a>Create</a><a>Progress</a><a>Assets</a><a>Plan</a><a class="on">Knowledge</a><a>Sport</a><a>Money</a><a>Notes</a>
+  </nav>
+  <main><div class="wrap">
+    <div class="list" id="list"></div>
+    <article class="panel" id="panel"></article>
+  </div></main>
+</div>
+
+<details class="params">
+  <summary>Paramètres</summary>
+  <div id="sliders"></div>
+  <button class="copy" id="copy">Copier les valeurs pour le prompt</button>
+</details>
+
+<script>
+// 23 October 2026 14:05: one data set, three layouts (HDA): A grouped by day, B date column, C search and repeat line.
+const QUESTIONS = [
+  { day: '22 October 2026', short: '22 Oct', time: '18:13', asked: 1, q: "Si je change le scale de l'arche, à texel density égale, les UV changent-elles ?",
+    a: ["Les coordonnées UV ne bougent pas quand on change l'échelle de l'objet, puisqu'elles sont attachées aux points et non à leur taille dans le monde.", "Ce qui change, c'est la densité réelle : une même île couvre plus de centimètres pour le même nombre de pixels, donc il faut relancer le layout ou compenser par la taille de la texture."] },
+  { day: '22 October 2026', short: '22 Oct', time: '18:41', asked: 1, q: 'Pourquoi .zr-archive-work pèse-t-il 121 Go ?',
+    a: ["Ce dossier garde les copies de travail des envois vers le drive ; on peut le purger une fois la preuve cloud verte."] },
+  { day: '13 October 2026', short: '13 Oct', time: '22:20', asked: 1, q: 'Combien de pushes par minute GitHub accepte-t-il ?',
+    a: ["GitHub recommande au plus 6 pushes par minute et par dépôt ; avec des lots de 1 900 Mio, on en fait un toutes les 3 minutes, très loin de cette limite."] },
+  { day: '20 August 2026', short: '20 Aug', time: '08:27', asked: 2, q: "C'est quoi les Cloudflare rules ?",
+    a: ["Ce sont des règles que Cloudflare applique avant que la requête n'atteigne le site : redirection, réécriture d'en-tête, cache prolongé, blocage.", "Elles se règlent dans le tableau de bord de la zone, sans toucher au code."] },
+  { day: '4 June 2026', short: '4 Jun', time: '19:15', asked: 2, q: 'Comment exporter une image de DaVinci ?',
+    a: ["Dans la page Color, clic droit sur la vignette du plan puis « Grab Still » ; dans la Gallery, clic droit sur l'image, « Export », format PNG."] },
+]
+const CUTS = { text: "'GT Sectra LCG', var(--zr-police-serif)", display: "'GT Sectra LCG Display', var(--zr-police-serif)" }
+const PARAMS = [
+  ['--list-w', 340, 640, 10, 'px', 'Largeur liste'], ['--col-gap', 16, 80, 2, 'px', 'Écart colonnes'],
+  ['--row-size', 13, 20, .5, 'px', 'Taille question'], ['--title-size', 20, 40, 1, 'px', 'Taille titre'],
+  ['--answer-size', 13, 20, .5, 'px', 'Taille réponse'], ['--row-pad', 6, 20, 1, 'px', 'Marge ligne'],
+  ['--radius', 0, 28, 1, 'px', 'Arrondi'], ['--accent-h', 0, 360, 1, '', 'Teinte accent'],
+]
+const root = document.documentElement, list = document.getElementById('list'), panel = document.getElementById('panel')
+let layout = 'a', cut = 'text', current = 3
+const esc = (t) => t.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[c])
+// Numbers stay Anthropic Serif, even inside a Sectra title.
+const nums = (t) => esc(t).replace(/(\d[\d:.,]*)/g, '<span class="num">$1</span>')
+
+function render() {
+  document.body.dataset.layout = layout
+  let html = layout === 'c' ? '<div class="search"><input placeholder="Chercher une question"></div>' : '', last = ''
+  QUESTIONS.forEach((x, i) => {
+    if (layout === 'a' && x.day !== last) { html += `<div class="group title">${nums(x.day.replace(/ \d{4}$/, ''))}</div>`; last = x.day }
+    const date = layout === 'b' ? `<span class="d num">${x.short}</span>` : ''
+    const sub = layout === 'c' ? `<span class="d">${nums(x.short)}</span>` : ''
+    html += `<button class="row body ${i === current ? 'on' : ''}" data-i="${i}">${date}<span>${esc(x.q)}${sub ? '<br>' + sub : ''}</span></button>`
+  })
+  list.innerHTML = html
+  const x = QUESTIONS[current]
+  const when = x.asked > 1 ? `Posée ${x.asked} fois, dernière le ${x.day} à ${x.time}` : `Posée le ${x.day} à ${x.time}`
+  panel.innerHTML = `<div class="when">${nums(when)}</div><h2 class="title">${nums(x.q)}</h2><div class="a body">${x.a.map((p) => `<p>${nums(p)}</p>`).join('')}</div>`
+  list.querySelectorAll('.row').forEach((r) => r.onclick = () => { current = +r.dataset.i; render() })
+}
+const seg = (id, attr, set) => document.querySelectorAll(`#${id} button`).forEach((b) => b.onclick = () => {
+  document.querySelectorAll(`#${id} button`).forEach((o) => o.classList.toggle('on', o === b)); set(b.dataset[attr]); render()
+})
+seg('layouts', 'l', (v) => layout = v)
+seg('cuts', 'c', (v) => { cut = v; root.style.setProperty('--zr-police-titres', CUTS[v]) })
+const box = document.getElementById('sliders')
+for (const [v, min, max, step, unit, label] of PARAMS) {
+  const cur = parseFloat(getComputedStyle(root).getPropertyValue(v)), l = document.createElement('label')
+  l.innerHTML = `${label}<span class="num">${cur}</span><input type="range" min="${min}" max="${max}" step="${step}" value="${cur}">`
+  l.querySelector('input').oninput = (e) => { root.style.setProperty(v, e.target.value + unit); l.querySelector('span').textContent = e.target.value }
+  box.appendChild(l)
+}
+document.getElementById('copy').onclick = () => navigator.clipboard.writeText(`Knowledge V2 ${layout.toUpperCase()}, titres ${cut === 'text' ? 'Sectra LCG' : 'Sectra LCG Display'} ; ` + PARAMS.map(([v]) => `${v}: ${getComputedStyle(root).getPropertyValue(v).trim()}`).join('; '))
+render()
+</script>
+</body>
+</html>
